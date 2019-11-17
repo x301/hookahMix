@@ -1,0 +1,5 @@
+.wrapper {
+    display: grid;
+    grid-area: header;
+    background-color: aqua;
+}
