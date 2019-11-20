@@ -12,7 +12,6 @@ const Elements = styled.div`
 
 
 const TobaccoElement = props => {
-
   const addTobacoBlender = (event) => {
     const item = {
       name: props.tobacoName.id,
@@ -21,7 +20,7 @@ const TobaccoElement = props => {
     const blenderElem = props.blender.find(e => e.name === item.name)
 
     if (!!blenderElem) {
-      blenderElem.tobacoItems.filter(e => e === item.tobacoItems[0]).length > 0 || props.AddInBlenderOnlyItems(item);
+      blenderElem.tobacoItems.filter(e => e === item.tobacoItems[0]).length > 0 ? props.delItemFromBlender(item):props.AddInBlenderOnlyItems(item);
     } else {
 
       props.addInBlender(item)

@@ -6,14 +6,13 @@ import { TobacoListWrapper, TobacoProducerName, TobacoElements } from "./tobacoL
 
 
 const TobacoList = props => {
-
   let lineItems = []
   let tobaccoProducerName = "";
   let filter = props.tobacoItems.filter(e => e.name === props.name.id)
   if (filter.length !== 0) {
     tobaccoProducerName = filter[0].name
     lineItems = filter[0].items.map((e) => {
-      return <Element name={e} tobacoName={props.tobacoName} addInBlender={props.addInBlender} blender={props.blender} AddInBlenderOnlyItems={props.AddInBlenderOnlyItems} />;
+      return <Element delItemFromBlender={props.delItemFromBlender} name={e} tobacoName={props.tobacoName} addInBlender={props.addInBlender} blender={props.blender} AddInBlenderOnlyItems={props.AddInBlenderOnlyItems} />;
     })
   }
 

@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import Blender from "./Blender";
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     blender: state.tobacoList.blender
   }
