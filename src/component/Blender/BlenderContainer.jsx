@@ -1,17 +1,19 @@
 import React from "react";
-import s from "./Blender.module.css";
+
 import { connect } from "react-redux";
+import Blender from "./Blender";
 
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
-    blender: state.blender
+    blender: state.tobacoList.blender
   }
 }
 
 const BlenderWith = props => {
-  return <Blender tobacoName={props.blender.name} tobacoItems={props.blender.tobacoItems} />;
+  return <Blender blender={props.blender} />;
 };
 
-const BlenderContainer = connect(mapStateToProps, {})(BlenderWith)
+const BlenderContainer = connect(mapStateToProps)(BlenderWith)
 
 export default BlenderContainer;

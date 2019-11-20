@@ -3,14 +3,21 @@ import { BLenderWrapper } from "./blender.styled";
 
 const Blender = props => {
 
+  const blenderItems = props.blender.map(e => {
+    const tobacoItems = e.tobacoItems.map(e => {
+      return <div>{e}</div >
+    })
+    return <div>
+      {e.name}
+      <div>{tobacoItems}</div>
+    </div>
+  })
 
   return <BLenderWrapper>
     <div>
       <div>
-        {props.tobacoName}
-      </div>
-      <div>
-        {props.tobacoItems}
+        {blenderItems}
+
       </div>
     </div>
   </BLenderWrapper>;
