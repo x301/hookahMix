@@ -18,6 +18,7 @@ const initialState = {
 
 //Reducer
 export const tobacoListReducer = (state = initialState, action) => {
+
     let stateCopy = {
         ...state,
         tobacoItems: [...state.tobacoItems],
@@ -54,16 +55,9 @@ export const tobacoListReducer = (state = initialState, action) => {
 
                 }
 
-
-
             });
 
-
             return stateCopy
-
-
-
-
 
         default: return state;
     }
@@ -73,7 +67,7 @@ export const tobacoListReducer = (state = initialState, action) => {
 export const setTobacoItems = (list) => ({ type: SET_TOBACO_LIST, list })
 export const AddInBlender = (items) => ({ type: ADD_TOBACO_AND_ITEMS_IN_BLENDER, items })
 export const AddInBlenderOnlyItems = (items) => ({ type: ADD_TOBACO_ITEMS_IN_BLENDER, items })
-export const delItemFromBlender = (items) => ({ type: DEL_TOBACO_ITEMS_FROM_BLENDER, items })
+export const dellItemFromBlender = (items) => ({ type: DEL_TOBACO_ITEMS_FROM_BLENDER, items })
 
 //thunk
 export const getTobacoItems = (location) => (dispatch) => {

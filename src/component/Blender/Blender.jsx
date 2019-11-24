@@ -1,24 +1,43 @@
 import React from "react";
+import styled from "styled-components";
 import { BLenderWrapper } from "./blender.styled";
 
-const Blender = props => {
+const Elements = styled.div`
+&:hover {
+  color: black;
+  border-color: red;
+  };
+  color: red;
+  cursor: pointer;
+  
+`;
 
+const Blender = props => {
+  console.log(props.blender)
+  const dellTobacoItem = (event) => {
+    const item = {
+      name: event.target.parentNode.querySelector(".tobaccoName").textContent,
+      tobacoItems: [event.target.textContent]
+    }
+    console.log(event.target.parentNode.querySelector(".tobaccoName").textContent)
+    props.dellItem(item)
+  }
   const blenderItems = props.blender.map(e => {
     const tobacoItems = e.tobacoItems.map(e => {
-      return <div>{e}</div >
+      return <Elements  >{e}</Elements >
     })
-    return <div>
-      {e.name}
-      <div>{tobacoItems}</div>
+    return <div onClick={dellTobacoItem}>
+      <div className={"tobaccoName"}>{e.name}</div>
+      {tobacoItems}
     </div>
   })
 
   return <BLenderWrapper>
     <div>
-      <div>
+      <div >
         {blenderItems}
 
-      </div>
+      </div >
     </div>
   </BLenderWrapper>;
 };
