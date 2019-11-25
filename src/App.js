@@ -4,7 +4,7 @@ import Header from "./component/Header/Header";
 import Producers from "./component/Side/Producers";
 import TobacoListContainer from "./component/TobacoList/TobacoListContainer";
 import { Route, Switch } from "react-router-dom";
-import Blender from "./component/Blender/Blender";
+import BlenderContainer from './component/Blender/BlenderContainer';
 
 
 
@@ -23,7 +23,7 @@ const App = props => {
           />
         </Switch>
 
-        <Blender />
+        <BlenderContainer state={props.state} />
       </div>
     </div>
   );
