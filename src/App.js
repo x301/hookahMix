@@ -5,6 +5,7 @@ import Producers from "./component/Side/Producers";
 import TobacoListContainer from "./component/TobacoList/TobacoListContainer";
 import { Route, Switch } from "react-router-dom";
 import BlenderContainer from './component/Blender/BlenderContainer';
+import MixesContainer from "./component/Mixes/MixesContainer";
 
 
 
@@ -16,11 +17,13 @@ const App = props => {
         <Producers />
         <Switch>
           <Route
-            path="/:id"
+            path="/tobacco/:id"
             render={props => (
               <TobacoListContainer state={props.state} />
             )}
           />
+          <Route path="/mixes"><MixesContainer></MixesContainer></Route>
+
         </Switch>
 
         <BlenderContainer state={props.state} />
