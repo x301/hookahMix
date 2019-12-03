@@ -6,6 +6,7 @@ import TobacoListContainer from "./component/TobacoList/TobacoListContainer";
 import { Route, Switch } from "react-router-dom";
 import BlenderContainer from './component/Blender/BlenderContainer';
 import MixesContainer from "./component/Mixes/MixesContainer";
+import FindMixesBtn from "./component/FindMixes/FindMixes";
 
 
 
@@ -27,6 +28,7 @@ const App = props => {
         </Switch>
 
         <BlenderContainer state={props.state} />
+        <FindMixesBtn></FindMixesBtn>
       </div>
     </div>
   );

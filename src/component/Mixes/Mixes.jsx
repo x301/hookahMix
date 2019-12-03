@@ -1,4 +1,7 @@
 import React from "react";
+import { MixesWrapper, MixesPageWrapper, MixesItemWrapper, TobacoName, TobacoItem, TobacoMix } from "./MixesStyled";
+
+
 export const Mixes = (props) => {
 
     const mixes = props.tobacoMixes.map(e => {
@@ -8,14 +11,19 @@ export const Mixes = (props) => {
                 return <div>{e.itemName}</div>
 
             })
-            return <div>{e.tobacoName}
-                <div>{mixTobacoMixItems} </div></div>
+            return <TobacoMix>
+                <TobacoName>{`${e.tobacoName}: `}</TobacoName>
+                <TobacoItem >{mixTobacoMixItems} </TobacoItem>
+
+            </TobacoMix>
 
         })
-        return <div>{addTobacoMix}</div>
+        return <MixesItemWrapper>{addTobacoMix}</MixesItemWrapper>
 
     })
     return (
-        <div>{mixes}</div>
+        <MixesPageWrapper>
+            <MixesWrapper>{mixes}</MixesWrapper>
+        </MixesPageWrapper>
     )
 }

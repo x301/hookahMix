@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Header.module.css";
 
-const Header = () => {
+export default () => {
   return (
     <div className={s.wrapper}>
       <p>Logo</p>
@@ -9,4 +9,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+

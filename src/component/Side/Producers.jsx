@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Producers.module.css";
 import { NavLink } from "react-router-dom";
-const Producers = props => {
+export default props => {
 
   return (
     <div className={s.wrapper}>
@@ -21,4 +21,4 @@ const Producers = props => {
   );
 };
 
-export default Producers;
+

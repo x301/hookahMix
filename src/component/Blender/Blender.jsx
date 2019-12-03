@@ -12,20 +12,13 @@ const Elements = styled.div`
   
 `;
 
-const Blender = props => {
-  const dellTobacoItem = (event) => {
-    const item = {
-      name: event.target.parentNode.querySelector(".tobaccoName").textContent,
-      tobacoItems: [event.target.textContent]
-    }
+export default props => {
 
-    props.dellItem(item)
-  }
   const blenderItems = props.blender.map(e => {
     const tobacoItems = e.tobacoItems.map(e => {
       return <Elements  >{e}</Elements >
     })
-    return <div onClick={dellTobacoItem}>
+    return <div onClick={props.dellItem}>
       <div className={"tobaccoName"}>{e.name}</div>
       {tobacoItems}
     </div>
@@ -41,4 +34,3 @@ const Blender = props => {
   </BLenderWrapper>;
 };
 
-export default Blender;
