@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Items = props => {
+export default props => {
   return (
     <div>
       <NavLink to={props.name}>{props.name}</NavLink>
@@ -9,4 +9,4 @@ const Items = props => {
   );
 };
 
-export default Items;
+

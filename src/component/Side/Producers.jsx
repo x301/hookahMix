@@ -1,19 +1,19 @@
 import React from "react";
 import s from "./Producers.module.css";
 import { NavLink } from "react-router-dom";
-const Producers = props => {
+export default props => {
 
   return (
     <div className={s.wrapper}>
       <div className={s.tobacoProducer}>
         <div>
-          <NavLink to="/Adalia">Adalia</NavLink>
+          <NavLink to="/tobacco/Adalia">Adalia</NavLink>
         </div>
         <div>
-          <NavLink to="/Alfacker">Alfacker</NavLink>
+          <NavLink to="/tobacco/Alfacker">Alfacker</NavLink>
         </div>
         <div>
-          <NavLink to="/DarkSide">DarkSide</NavLink>
+          <NavLink to="/tobacco/DarkSide">DarkSide</NavLink>
         </div>
 
       </div>
@@ -21,4 +21,4 @@ const Producers = props => {
   );
 };
 
-export default Producers;
+

@@ -5,7 +5,7 @@ import { TobacoListWrapper, TobacoProducerName, TobacoElements } from "./tobacoL
 
 
 
-const TobacoList = props => {
+export default props => {
   let lineItems = []
   let tobaccoProducerName = "";
 
@@ -30,4 +30,3 @@ const TobacoList = props => {
   );
 };
 
-export default TobacoList;

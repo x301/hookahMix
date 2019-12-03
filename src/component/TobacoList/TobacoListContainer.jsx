@@ -9,7 +9,7 @@ import { getTobaco } from "./selectors";
 
 
 
-let mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
 
   return {
     tobacoList: getTobaco(state),
@@ -19,6 +19,7 @@ let mapStateToProps = (state) => {
 }
 
 const TobacoListContainer = (props) => {
+
   const location = useLocation()
 
   const tobacoName = useParams()
@@ -27,7 +28,7 @@ const TobacoListContainer = (props) => {
 
   useEffect(() => {
     if (!tobacoElement) {
-      props.getTobacoItems(location.pathname)
+      props.getTobacoItems(tobacoName.id)
     }
 
   }, [location.pathname])

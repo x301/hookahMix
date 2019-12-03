@@ -11,10 +11,17 @@ const mapStateToProps = (state) => {
   }
 }
 
-const BlenderWith = props => {
-  return <Blender blender={props.blender} dellItem={props.dellItemFromBlender} />;
+const BlenderContainer = props => {
+  const dellTobacoItem = (event) => {
+    const item = {
+      name: event.target.parentNode.querySelector(".tobaccoName").textContent,
+      tobacoItems: [event.target.textContent]
+    }
+    props.dellItemFromBlender(item)
+  }
+  return <Blender blender={props.blender} dellItem={dellTobacoItem} />;
 };
 
-const BlenderContainer = connect(mapStateToProps, { dellItemFromBlender })(BlenderWith)
+export default connect(mapStateToProps, { dellItemFromBlender })(BlenderContainer)
 
-export default BlenderContainer;
+

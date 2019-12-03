@@ -11,7 +11,7 @@ const Elements = styled.div`
 `;
 
 
-const TobaccoElement = props => {
+export default props => {
   const addTobacoBlender = (event) => {
     const item = {
       name: props.tobacoName.id,
@@ -30,4 +30,3 @@ const TobaccoElement = props => {
   }
   return <Elements onClick={addTobacoBlender}>{props.name}</Elements>;
 };
-export default TobaccoElement;
