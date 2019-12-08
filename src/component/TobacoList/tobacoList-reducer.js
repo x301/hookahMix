@@ -27,9 +27,9 @@ export const tobacoListReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case SET_TOBACO_LIST:
-
+            console.log(action.list)
             stateCopy.tobacoItems.push(action.list)
-
+            console.log(stateCopy)
             return stateCopy
 
         case ADD_TOBACO_AND_ITEMS_IN_BLENDER:
@@ -72,7 +72,7 @@ export const dellItemFromBlender = (items) => ({ type: DEL_TOBACO_ITEMS_FROM_BLE
 //thunk
 export const getTobacoItems = (location) => (dispatch) => {
     tobacoApi.getTobacoItems(location).then(data => {
-
+        console.log(data)
         dispatch(setTobacoItems(data))
     })
 }

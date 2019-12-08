@@ -14,7 +14,6 @@ const mapStateToProps = (state) => {
   return {
     tobacoList: getTobaco(state),
 
-
   }
 }
 
@@ -22,13 +21,14 @@ const TobacoListContainer = (props) => {
 
   const location = useLocation()
 
-  const tobacoName = useParams()
+  const tobacoName = useParams().id
 
-  const tobacoElement = props.tobacoList.tobacoItems.find(e => e.name === tobacoName.id)
+  const tobacoActiveElement = props.tobacoList.tobacoItems.find(e => e.name === tobacoName)
 
   useEffect(() => {
-    if (!tobacoElement) {
-      props.getTobacoItems(tobacoName.id)
+    if (!tobacoActiveElement) {
+
+      props.getTobacoItems(tobacoName)
     }
 
   }, [location.pathname])
@@ -37,7 +37,7 @@ const TobacoListContainer = (props) => {
   return (
     <TobacoList
       tobacoItems={props.tobacoList.tobacoItems}
-      tobacoElement={tobacoElement}
+      tobacoActiveElement={tobacoActiveElement}
       tobacoName={tobacoName}
       addInBlender={props.AddInBlender}
       blender={props.tobacoList.blender}
