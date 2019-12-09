@@ -18,7 +18,7 @@ export const mixesReducer = (state = initialState, action) => {
                 mixes: [...action.mixes]
 
             }
-            console.log(state.mixes)
+            console.log(state)
             return state
         }
 
@@ -33,7 +33,7 @@ const setMixes = (mixes) => ({ type: SET_MIXES, mixes })
 //Thunk
 export const getMixes = () => (dispatch) => {
     mixesApi.getMixes().then(data => {
-        console.log(data)
+
         dispatch(setMixes(data))
     })
 

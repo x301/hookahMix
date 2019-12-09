@@ -1,4 +1,4 @@
-import axios from "axios"
+
 import firebase from "firebase/app"
 import "firebase/firestore";
 import config from "./firebaseConf"
@@ -15,31 +15,32 @@ const getTobacoProducers = db.collection("HookahProducers").get().then(snapshot 
   });
 
 
-const instance = axios.create({
-  baseURL: `https://hookahblender.firebaseio.com`
-});
 
 export const tobacoApi = {
   getTobacoItems(tobacoId) {
-    return db.collection("HookahProducers").doc(tobacoId).get().then(res => {
-      console.log(res.data())
-      return res.data()
-    })
-
-
-    //  instance.get(`/tobacoList/tobacoItems/${tobacoId}.json`).then(res => {
-    //  console.log(res.data)
-    //    return res.data;
-    //  })
+    return db.collection("HookahProducers").doc(tobacoId).get().then(res => res.data())
 
   }
 }
 export const mixesApi = {
-  getMixes() {
-    return instance.get('/mixes.json').then(res => {
 
-      return res.data
+  getMixes() {
+    const findMixes = db.collection("HokahMixes").get().then(res => {
+      res.forEach(res => {
+        console.log(!!(res.get("Alfa")))
+      })
+
     })
+    console.log(findMixes)
+    return db.collection("HokahMixes").get().then(snapshot => {
+      const arrMixes = [];
+      snapshot.forEach(res => {
+        arrMixes.push(res.get("mix2"))
+
+      })
+      return arrMixes
+    })
+
   }
 }
 

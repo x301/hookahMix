@@ -14,7 +14,7 @@ const Elements = styled.div`
 export default props => {
   const addTobacoBlender = (event) => {
     const item = {
-      name: props.tobacoName.id,
+      name: props.tobacoName,
       tobacoItems: [event.currentTarget.textContent]
     }
     const blenderElem = props.blender.find(e => e.name === item.name)
