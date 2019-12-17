@@ -8,7 +8,7 @@ import Blender from "./Blender";
 
 
 const BlenderContainer = ({ dispatch }) => {
-  const getBlender = useSelector(state => state.tobacoList.blender)
+  const getBlender = useSelector(state => state.tobacoListPage.blender)
   const dellTobacoItem = (event) => {
 
     const name = event.target.parentNode.querySelector(".tobaccoName").textContent;

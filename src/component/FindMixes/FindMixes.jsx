@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components"
 import { useHistory } from "react-router-dom"
+import { useSelector, useDispatch } from 'react-redux';
+import { getMixes } from "../Mixes/mixes-reducer"
+
 
 const FindMixesWrapper = styled.div`
 position: fixed;
@@ -23,28 +26,15 @@ color: black;
 
 export default () => {
     let history = useHistory()
-    const handleClick(){
-        const getBlender = useSelector(state => state.tobacoList.blender)
-        const getFindMixes = firebase
-            .functions()
-            .httpsCallable('getFindMixes');
+    const dispatch = useDispatch()
+    const getBlender = useSelector(state => state.tobacoListPage.blender)
+    const handleClick = () => {
+        dispatch(getMixes(getBlender))
 
-        getFindMixes(getBlender)
-            .then(function (result) {
-                const collections = result;
-                console.log(result);
-            })
-            .catch(function (error) {
-                // Getting the Error details.
-                var code = error.code;
-                var message = error.message;
-                var details = error.details;
-                // ...
-            });
         history.push("/mixes")
     }
 
     return (
-        <FindMixesWrapper><MixesBtn onClick={}>Подобрать миксы</MixesBtn></FindMixesWrapper>
+        <FindMixesWrapper><MixesBtn onClick={handleClick}>Подобрать миксы</MixesBtn></FindMixesWrapper>
     )
 }

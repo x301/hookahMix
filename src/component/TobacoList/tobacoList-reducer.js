@@ -1,5 +1,5 @@
 //Actions
-import { firestoreConnect, useFirestoreConnect, useFirestore } from 'react-redux-firebase'
+
 const SET_TOBACO_LIST = "components/tobacoList/GETTOBACOLIST";
 const ADD_TOBACO_AND_ITEMS_IN_BLENDER = "components/blender/ADDTOBACOANDITEMSINBLENDER"
 const ADD_TOBACO_ITEMS_IN_BLENDER = "components/blender/ADDTOBACOITEMINBLENDER"

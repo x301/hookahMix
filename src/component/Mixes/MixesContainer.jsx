@@ -1,16 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Mixes } from './Mixes';
-import { compose } from 'redux';
-import { connect, useSelector } from "react-redux";
-import { getMixes } from "./mixes-reducer"
-import { useFirestore, isLoaded } from 'react-redux-firebase'
-import firebase from './../../config/fbConf';
+import { useSelector } from 'react-redux';
+
+import { isEmpty, isLoaded } from 'react-redux-firebase'
+
 
 const MixesContainer = () => {
-
-
+    const getFindMixes = useSelector(state => state.mixesListPage.mixes)
+    console.log(getFindMixes)
     return (
-        <Mixes></Mixes>
+        !isEmpty(getFindMixes) ?
+            isLoaded(getFindMixes) ? <Mixes mixes={getFindMixes}></Mixes> : "Mixes not found"
+            : "Not found"
+
     )
 }
 

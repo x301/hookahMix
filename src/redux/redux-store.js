@@ -6,9 +6,10 @@ import { firestoreReducer } from 'redux-firestore'
 import { firebaseReducer, getFirebase } from 'react-redux-firebase'
 
 
+
 let rootReducers = combineReducers({
-    tobacoList: tobacoListReducer,
-    mixes: mixesReducer,
+    tobacoListPage: tobacoListReducer,
+    mixesListPage: mixesReducer,
     firestore: firestoreReducer,
     firebase: firebaseReducer
 });

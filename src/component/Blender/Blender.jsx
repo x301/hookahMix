@@ -23,20 +23,6 @@ export default ({ blender, dellItem }) => {
     </div>
   })
 
-
-
-  //  const blenderItems = Object.entries(blender).map(e => {
-  //   console.log(e)
-  //   //   const tobacoItems = e.tobacoItems.map(e => {
-  //   //     return <Elements  >{e}</Elements >
-  //   //   })
-  //   //   return <div onClick={props.dellItem}>
-  //   //     <div className={"tobaccoName"}>{e.name}</div>
-  //   //     {tobacoItems}
-  //   //   </div>
-  //   // })
-  // })
-
   return <BLenderWrapper>
     {blenderItems}
   </BLenderWrapper>;

@@ -27,7 +27,7 @@ const TobacoListContainer = ({ firestore, dispatch, ...props }) => {
   }, [tobacoName])
 
 
-  const getBlender = useSelector((state) => state.tobacoList.blender)
+  const getBlender = useSelector((state) => state.tobacoListPage.blender)
 
   const addTobacoBlender = (event) => {
 

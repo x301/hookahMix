@@ -2,28 +2,27 @@ import React from "react";
 import { MixesWrapper, MixesPageWrapper, MixesItemWrapper, TobacoName, TobacoItem, TobacoMix } from "./MixesStyled";
 
 
+export const Mixes = ({ mixes }) => {
+    const findedMixes = mixes.map(mix => {
+        const mixesItems = Object.entries(mix).map(e => {
 
-export const Mixes = ({ tobacoMixes, ...props }) => {
+            const tobacoElement = Object.entries(e[1]).map(e => {
 
-    // const mixes = tobacoMixes.map(mixes => {
-    //     const tobaco = [];
-    //     for (let producerName in mixes) {
-    //         const tobacoItems = []
-    //         for (let tobacoName in mixes[producerName]) {
-    //             tobacoItems.push(<div>{tobacoName}</div>)
-    //         }
-    //         tobaco.push(<TobacoMix>
-    //             <TobacoName>{`${producerName}: `}</TobacoName>
-    //             <TobacoItem >{tobacoItems} </TobacoItem>
-    //         </TobacoMix>)
+                return <TobacoItem  >{e[0]}</TobacoItem>
+            })
 
-    //     }
-    //     return <MixesItemWrapper>{tobaco}</MixesItemWrapper>
 
-    // })
+            return <TobacoMix>
+                <TobacoName >{e[0]}</TobacoName>
+                {tobacoElement}
+            </TobacoMix>
+        })
+        return <MixesItemWrapper>{mixesItems}</MixesItemWrapper>
+    })
+
     return (
         <MixesPageWrapper>
-            <MixesWrapper></MixesWrapper>
+            <MixesWrapper>{findedMixes}</MixesWrapper>
         </MixesPageWrapper>
     )
 }
