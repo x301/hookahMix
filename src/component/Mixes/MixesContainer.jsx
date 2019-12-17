@@ -1,24 +1,19 @@
-import React, { useEffect } from "react";
-import { getMixesData } from './mixes-selector';
+import React from "react";
 import { Mixes } from './Mixes';
-import { compose } from 'redux';
-import { connect } from "react-redux";
-import { getMixes } from "./mixes-reducer"
+import { useSelector } from 'react-redux';
 
-const mapStateToProps = (state) => {
-    return {
-        tobacoMixesPage: getMixesData(state)
-    }
-}
+import { isEmpty, isLoaded } from 'react-redux-firebase'
 
-const MixesContainer = (props) => {
-    useEffect(() => {
-        props.getMixes()
-    }, [])
 
+const MixesContainer = () => {
+    const getFindMixes = useSelector(state => state.mixesListPage.mixes)
+    console.log(getFindMixes)
     return (
-        <Mixes tobacoMixes={props.tobacoMixesPage.mixes}></Mixes>
+        !isEmpty(getFindMixes) ?
+            isLoaded(getFindMixes) ? <Mixes mixes={getFindMixes}></Mixes> : "Mixes not found"
+            : "Not found"
+
     )
 }
 
-export default compose(connect(mapStateToProps, { getMixes })(MixesContainer))
+export default MixesContainer

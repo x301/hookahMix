@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components"
 const Elements = styled.div`
 &:hover {
@@ -11,22 +11,11 @@ const Elements = styled.div`
 `;
 
 
-export default props => {
-  const addTobacoBlender = (event) => {
-    const item = {
-      name: props.tobacoName.id,
-      tobacoItems: [event.currentTarget.textContent]
-    }
-    const blenderElem = props.blender.find(e => e.name === item.name)
-
-    if (!!blenderElem) {
-      blenderElem.tobacoItems.filter(e => e === item.tobacoItems[0]).length > 0 ? props.dellItemFromBlender(item) : props.AddInBlenderOnlyItems(item);
-    } else {
-
-      props.addInBlender(item)
-    }
+export default ({ tobacoElement, ...props }) => {
+  console.log(props)
 
 
-  }
-  return <Elements onClick={addTobacoBlender}>{props.name}</Elements>;
+
+
+  return <Elements >{tobacoElement}</Elements>;
 };

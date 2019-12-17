@@ -3,19 +3,34 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import store, {subscribe} from "./redux/redux-store";
+import store from "./redux/redux-store";
 import { BrowserRouter as Router } from "react-router-dom";
-import {Provider} from "react-redux"
+import { Provider } from "react-redux"
+import { ReduxFirestoreProvider } from 'react-redux-firebase'
+import { createFirestoreInstance } from 'redux-firestore'
+import rrfConf from './config/rrfConf';
+import firebase from "./config/fbConf"
+
+const rrfProps = {
+  firebase,
+  config: rrfConf,
+  dispatch: store.dispatch,
+  createFirestoreInstance
+
+}
 
 
-  ReactDOM.render(
-    <Router>
-      <Provider store={store}>
-        <App state={store}  />
-      </Provider>
-    </Router>,
-    document.getElementById("root")
-  );
+ReactDOM.render(
+  <Router>
+    <Provider store={store}>
+      <ReduxFirestoreProvider  {...rrfProps}>
+        <App state={store} />
+      </ReduxFirestoreProvider>
+
+    </Provider>
+  </Router>,
+  document.getElementById("root")
+);
 
 
 

@@ -1,16 +1,15 @@
-import { mixesApi } from '../../api/firebase';
+import firebase from './../../config/fbConf';
 
 const SET_MIXES = "components/mixes/SETMIXES"
 
 
 const initialState = {
-    mixes: [
 
-    ]
 }
 
 // Reducer
 export const mixesReducer = (state = initialState, action) => {
+
     switch (action.type) {
         case SET_MIXES: {
             state = {
@@ -18,7 +17,7 @@ export const mixesReducer = (state = initialState, action) => {
                 mixes: [...action.mixes]
 
             }
-            console.log(state.mixes)
+
             return state
         }
 
@@ -31,10 +30,21 @@ export const mixesReducer = (state = initialState, action) => {
 const setMixes = (mixes) => ({ type: SET_MIXES, mixes })
 
 //Thunk
-export const getMixes = () => (dispatch) => {
-    mixesApi.getMixes().then(data => {
-        console.log(data)
-        dispatch(setMixes(data))
-    })
+export const getMixes = getBlender => dispatch => {
+    const getFindMixes = firebase
+        .functions()
+        .httpsCallable('getFindMixes');
 
+    return getFindMixes(getBlender)
+        .then(function (result) {
+            dispatch(setMixes(result.data))
+        })
+        .catch(function (error) {
+            // Getting the Error details.
+            var code = error.code;
+            var message = error.message;
+            var details = error.details;
+            // ...
+        });
 }
+

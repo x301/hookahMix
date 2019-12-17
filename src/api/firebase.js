@@ -1,23 +1,88 @@
-import axios from "axios"
 
-const instance = axios.create({
-  baseURL: `https://hookahblender.firebaseio.com`
-});
+import firebase from "firebase/app"
+import "firebase/firestore";
+import config from "./firebaseConf"
+firebase.initializeApp(config);
 
-export const tobacoApi = {
+const db = firebase.firestore();
+
+
+
+const tobacoApi = {
   getTobacoItems(tobacoId) {
-    return instance.get(`/tobacoList/tobacoItems/${tobacoId}.json`).then(res => {
-      return res.data;
-    })
+    return db.collection("HookahProducers").doc(tobacoId).get().then(res => res.data())
 
   }
 }
-export const mixesApi = {
-  getMixes() {
-    return instance.get('/mixes.json').then(res => {
+const mixesApi = {
 
-      return res.data
+  getMixes() {
+    db = firebase.firestore();
+    const dbMixes = db.collection("HokahMixes")
+    // const arrFind = [
+    //   {
+    //     name: "Alfacker",
+    //     tobacoItems: ["Яблоко", "Мята"]
+    //   },
+    //   {
+    //     name: "Adalia",
+    //     tobacoItems: ["Яблоко"]
+    //   }
+    // ]
+    // const addInQueryMix = async (docRef, name) => {
+
+
+    //   const tobacoMixElement = {
+    //     name: "",
+    //     tobacoItems: []
+    //   }
+    //   await docRef.collection(name).get().then(snapshots => {
+    //     tobacoMixElement.name = name;
+    //     snapshots.forEach(e => {
+    //       tobacoMixElement.tobacoItems.push(e.data())
+    //     })
+    //   })
+    //   return tobacoMixElement
+    // }
+    // const findMix = async (e) => {
+
+
+
+    //   const arrDocSnapshot = []
+    //   await dbMixes.get().then(res => {
+    //     res.forEach(res => {
+    //       console.log(`Первый цикл: ${res.id}`)
+    //       res.ref.collection(e.name).where("name", "in", e.tobacoItems).get().then(doc => {
+    //         if (!(doc.empty)) {
+    //           arrDocSnapshot.push(res.ref)
+    //           const r = res.ref.listCollections()
+    //           console.log(r)
+
+    //         }
+
+    //       })
+
+    //     }
+    //     )
+    //   })
+
+    //   console.log(arrDocSnapshot)
+    //   return (arrDocSnapshot)
+    // }
+
+
+
+
+
+    return db.collection("HokahMixes").get().then(snapshot => {
+      const arrMixes = [];
+      snapshot.forEach(res => {
+        arrMixes.push(res.data())
+
+      })
+      return arrMixes
     })
+
   }
 }
 

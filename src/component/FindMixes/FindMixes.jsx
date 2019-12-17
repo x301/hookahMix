@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components"
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom"
+import { useSelector, useDispatch } from 'react-redux';
+import { getMixes } from "../Mixes/mixes-reducer"
+
 
 const FindMixesWrapper = styled.div`
 position: fixed;
@@ -12,7 +15,7 @@ margin: auto;
 
 `;
 
-const MixesBtn = styled(Link)`
+const MixesBtn = styled.button`
 max-width:100%;
 height: auto;
 display: block;
@@ -22,7 +25,16 @@ color: black;
 
 
 export default () => {
+    let history = useHistory()
+    const dispatch = useDispatch()
+    const getBlender = useSelector(state => state.tobacoListPage.blender)
+    const handleClick = () => {
+        dispatch(getMixes(getBlender))
+
+        history.push("/mixes")
+    }
+
     return (
-        <FindMixesWrapper><MixesBtn to="/mixes"  >Подобрать миксы</MixesBtn></FindMixesWrapper>
+        <FindMixesWrapper><MixesBtn onClick={handleClick}>Подобрать миксы</MixesBtn></FindMixesWrapper>
     )
 }

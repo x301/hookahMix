@@ -22,7 +22,7 @@ export const TobacoName = styled.div`
 
 `;
 
-export const TobacoItem = styled.span`
+export const TobacoItem = styled.div`
 `;
 
 export const TobacoMix = styled.div`

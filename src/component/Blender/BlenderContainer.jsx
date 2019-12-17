@@ -1,27 +1,29 @@
 import React from "react";
 import { dellItemFromBlender } from "../TobacoList/tobacoList-reducer"
 
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import Blender from "./Blender";
 
 
-const mapStateToProps = (state) => {
-  return {
-    blender: state.tobacoList.blender
-  }
-}
 
-const BlenderContainer = props => {
+
+const BlenderContainer = ({ dispatch }) => {
+  const getBlender = useSelector(state => state.tobacoListPage.blender)
   const dellTobacoItem = (event) => {
-    const item = {
-      name: event.target.parentNode.querySelector(".tobaccoName").textContent,
-      tobacoItems: [event.target.textContent]
-    }
-    props.dellItemFromBlender(item)
+
+    const name = event.target.parentNode.querySelector(".tobaccoName").textContent;
+    const tobacoIndex = getBlender[name].tobacoItems.indexOf(event.target.textContent)
+
+
+    dispatch(dellItemFromBlender({
+      name,
+      tobacoIndex
+    }))
+
   }
-  return <Blender blender={props.blender} dellItem={dellTobacoItem} />;
+  return <Blender blender={getBlender} dellItem={dellTobacoItem} />;
 };
 
-export default connect(mapStateToProps, { dellItemFromBlender })(BlenderContainer)
+export default BlenderContainer
 
 
