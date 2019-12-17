@@ -1,41 +1,25 @@
 import React from "react";
-import Element from "./TobaccoElement/TobaccoElement";
+import styled from "styled-components"
+//import Element from "./TobaccoElement/TobaccoElement";
 import { TobacoListWrapper, TobacoProducerName, TobacoElements } from "./tobacoList.styled"
 
+const Element = styled.div`
+&:hover {
+  color: black;
+  border-color: red;
+  };
+  color: red;
+  cursor: pointer;
+  border:1px solid black;
+`;
 
 
-
-export default props => {
-
-  let lineItems = []
-  let tobaccoProducerName = "";
-
-  if (!!props.tobacoActiveElement) {
-
-    tobaccoProducerName = props.tobacoActiveElement.name
-
-    lineItems = props.tobacoActiveElement.tobacoItems.map((e) => {
-
-      return <Element
-
-        dellItemFromBlender={props.dellItemFromBlender}
-
-        name={e}
-
-        tobacoName={props.tobacoName}
-
-        addInBlender={props.addInBlender}
-
-        blender={props.blender}
-
-        AddInBlenderOnlyItems={props.AddInBlenderOnlyItems} />;
-    })
-  }
-
+export default ({ tobacoList, addTobacoblender, ...props }) => {
   return (
     <TobacoListWrapper >
-      <TobacoProducerName>{tobaccoProducerName}</TobacoProducerName>
-      <TobacoElements>{lineItems}</TobacoElements>
+      <TobacoProducerName>{tobacoList.name}</TobacoProducerName>
+      <TobacoElements>{tobacoList.tobacoItems.map(e => <Element onClick={addTobacoblender}>{e}</Element>
+      )}</TobacoElements>
     </TobacoListWrapper>
   );
 };

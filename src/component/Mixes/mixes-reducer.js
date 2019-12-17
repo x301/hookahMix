@@ -1,4 +1,4 @@
-import { mixesApi } from '../../api/firebase';
+
 
 const SET_MIXES = "components/mixes/SETMIXES"
 
@@ -31,10 +31,12 @@ export const mixesReducer = (state = initialState, action) => {
 const setMixes = (mixes) => ({ type: SET_MIXES, mixes })
 
 //Thunk
-export const getMixes = () => (dispatch) => {
-    mixesApi.getMixes().then(data => {
+export const getMixes = () => (dispatch, { getFirebase, getFirestore }) => {
+    // mixesApi.getMixes().then(data => {
 
-        dispatch(setMixes(data))
-    })
+    //     dispatch(setMixes(data))
+    // })
+    const firestore = getFirestore()
+    firestore.collections('HokahMixes')
 
 }

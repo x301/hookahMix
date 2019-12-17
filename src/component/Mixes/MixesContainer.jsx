@@ -1,24 +1,17 @@
 import React, { useEffect } from "react";
-import { getMixesData } from './mixes-selector';
 import { Mixes } from './Mixes';
 import { compose } from 'redux';
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { getMixes } from "./mixes-reducer"
+import { useFirestore, isLoaded } from 'react-redux-firebase'
+import firebase from './../../config/fbConf';
 
-const mapStateToProps = (state) => {
-    return {
-        tobacoMixesPage: getMixesData(state)
-    }
-}
+const MixesContainer = () => {
 
-const MixesContainer = (props) => {
-    useEffect(() => {
-        props.getMixes()
-    }, [])
 
     return (
-        <Mixes tobacoMixes={props.tobacoMixesPage.mixes}></Mixes>
+        <Mixes></Mixes>
     )
 }
 
-export default compose(connect(mapStateToProps, { getMixes })(MixesContainer))
+export default MixesContainer

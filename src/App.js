@@ -10,7 +10,7 @@ import FindMixesBtn from "./component/FindMixes/FindMixes";
 
 
 
-const App = props => {
+const App = ({ state }) => {
   return (
     <div className={s.my_page}>
       <Header />
@@ -19,15 +19,15 @@ const App = props => {
         <Switch>
           <Route
             path="/tobacco/:id"
-            render={props => (
-              <TobacoListContainer state={props.state} />
+            render={(props) => (
+              < TobacoListContainer dispatch={state.dispatch} />
             )}
           />
           <Route path="/mixes"><MixesContainer></MixesContainer></Route>
 
         </Switch>
 
-        <BlenderContainer state={props.state} />
+        <BlenderContainer dispatch={state.dispatch} />
         <FindMixesBtn></FindMixesBtn>
       </div>
     </div>

@@ -1,51 +1,62 @@
-import React, { useEffect } from "react";
-import { compose } from "redux"
+import React from "react";
 import TobacoList from "./TobacoList";
-import { connect } from "react-redux";
-import { getTobacoItems, AddInBlender, AddInBlenderOnlyItems, dellItemFromBlender } from "./tobacoList-reducer";
-import { useLocation, useParams } from "react-router-dom"
+import { useSelector } from "react-redux";
+import { AddInBlender, AddInBlenderOnlyItems, dellItemFromBlender } from "./tobacoList-reducer";
+import { useParams } from "react-router-dom"
 import { getTobaco } from "./selectors";
+import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
 
 
-
-
-const mapStateToProps = (state) => {
-
-  return {
-    tobacoList: getTobaco(state),
-
-  }
-}
-
-const TobacoListContainer = (props) => {
-
-  const location = useLocation()
+const TobacoListContainer = ({ firestore, dispatch, ...props }) => {
 
   const tobacoName = useParams().id
 
-  const tobacoActiveElement = props.tobacoList.tobacoItems.find(e => e.name === tobacoName)
+  const getTobacoList = useSelector((({ firestore }) => {
+    return firestore.data.HookahProducers && firestore.data.HookahProducers[tobacoName]
 
-  useEffect(() => {
-    if (!tobacoActiveElement) {
+  }))
+  useFirestoreConnect(() => {
+    if (!!(getTobacoList)) {
 
-      props.getTobacoItems(tobacoName)
+      if (!(getTobacoList.name === tobacoName)) {
+        return `HookahProducers/${tobacoName}`
+      }
+    } else {
+      return `HookahProducers/${tobacoName}`
     }
+  }, [tobacoName])
 
-  }, [location.pathname])
+
+  const getBlender = useSelector((state) => state.tobacoList.blender)
+
+  const addTobacoBlender = (event) => {
+
+    const currentTobaco = event.currentTarget.textContent
+    if (getBlender[getTobacoList.name]) {
+      const findTobaco = getBlender[getTobacoList.name].tobacoItems.find(e => e === currentTobaco)
+      !(findTobaco) && dispatch(AddInBlenderOnlyItems({
+        name: getTobacoList.name,
+        tobacoItems: event.currentTarget.textContent
+      }))
+
+    } else {
+      dispatch(AddInBlender({
+        name: getTobacoList.name,
+        tobacoItems: event.currentTarget.textContent
+      }))
+    }
+  }
 
 
   return (
-    <TobacoList
-      tobacoItems={props.tobacoList.tobacoItems}
-      tobacoActiveElement={tobacoActiveElement}
-      tobacoName={tobacoName}
-      addInBlender={props.AddInBlender}
-      blender={props.tobacoList.blender}
-      AddInBlenderOnlyItems={props.AddInBlenderOnlyItems}
-      dellItemFromBlender={props.dellItemFromBlender}></TobacoList>
+    isLoaded(getTobacoList) ?
+      <TobacoList
+        tobacoList={!!(getTobacoList) && getTobacoList} addTobacoblender={addTobacoBlender}
+      >
+
+      </TobacoList> : "loading"
   )
 }
 
-export default compose(
-  connect(mapStateToProps, { getTobacoItems, AddInBlender, AddInBlenderOnlyItems, dellItemFromBlender }),
-)(TobacoListContainer);;
+export default TobacoListContainer
+

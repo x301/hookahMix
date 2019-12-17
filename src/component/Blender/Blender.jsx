@@ -12,25 +12,34 @@ const Elements = styled.div`
   
 `;
 
-export default props => {
+export default ({ blender, dellItem }) => {
 
-  const blenderItems = props.blender.map(e => {
-    const tobacoItems = e.tobacoItems.map(e => {
-      return <Elements  >{e}</Elements >
-    })
-    return <div onClick={props.dellItem}>
-      <div className={"tobaccoName"}>{e.name}</div>
+
+  const blenderItems = Object.entries(blender).map(e => {
+    const tobacoItems = e[1].tobacoItems.map(e => <Elements  >{e}</Elements >)
+    return <div onClick={dellItem}>
+      <div className={"tobaccoName"}>{e[0]}</div>
       {tobacoItems}
     </div>
   })
 
-  return <BLenderWrapper>
-    <div>
-      <div >
-        {blenderItems}
 
-      </div >
-    </div>
+
+  //  const blenderItems = Object.entries(blender).map(e => {
+  //   console.log(e)
+  //   //   const tobacoItems = e.tobacoItems.map(e => {
+  //   //     return <Elements  >{e}</Elements >
+  //   //   })
+  //   //   return <div onClick={props.dellItem}>
+  //   //     <div className={"tobaccoName"}>{e.name}</div>
+  //   //     {tobacoItems}
+  //   //   </div>
+  //   // })
+  // })
+
+  return <BLenderWrapper>
+    {blenderItems}
   </BLenderWrapper>;
 };
+
 
