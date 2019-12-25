@@ -26,7 +26,7 @@ export const TobacoProducerName = styled.div`
 export const TobaccoElementWrapper = styled.div`
 
 &:hover {
-    border-color: ${({ theme }) => theme.primaryHover};; 
+    border-color: ${({ theme }) => theme.primaryHover}; 
   }
   cursor: pointer;
   border: 1px solid #bdc3c7;

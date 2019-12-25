@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./component/Header/Header";
 import Producers from "./component/Side/Producers";
 import TobacoListContainer from "./component/TobacoList/TobacoListContainer";
@@ -7,14 +7,15 @@ import BlenderContainer from './component/Blender/BlenderContainer';
 import MixesContainer from "./component/Mixes/MixesContainer";
 import FindMixesBtn from "./component/FindMixes/FindMixes";
 import { MainPageWrapper } from './App.styled';
+import HamburgerMenu from "./common/HamburgerMenu/HumburgerMenu"
 
 
 
 const App = ({ state }) => {
+  const [activeSide, setActiveSide] = useState(false)
   return (
     <MainPageWrapper>
       <Header />
-      <Producers />
       <Switch>
         <Route
           path="/tobacco/:id"
@@ -27,6 +28,8 @@ const App = ({ state }) => {
       </Switch>
 
       <BlenderContainer dispatch={state.dispatch} />
+      <HamburgerMenu activeSide={activeSide} setActiveSide={setActiveSide} ></HamburgerMenu>
+      <Producers activeSide={activeSide} setActiveSide={setActiveSide} />
       <FindMixesBtn></FindMixesBtn>
     </MainPageWrapper>
 
