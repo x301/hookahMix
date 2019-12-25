@@ -3,11 +3,10 @@ import TobacoList from "./TobacoList";
 import { useSelector } from "react-redux";
 import { AddInBlender, AddInBlenderOnlyItems, dellItemFromBlender } from "./tobacoList-reducer";
 import { useParams } from "react-router-dom"
-import { getTobaco } from "./selectors";
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
 
 
-const TobacoListContainer = ({ firestore, dispatch, ...props }) => {
+const TobacoListContainer = ({ dispatch }) => {
 
   const tobacoName = useParams().id
 

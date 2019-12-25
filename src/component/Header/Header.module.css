@@ -1,5 +1,5 @@
 .wrapper {
     display: grid;
     grid-area: header;
-    background-color: aqua;
+    background-color: #40739e;
 }

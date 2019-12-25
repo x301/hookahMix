@@ -1,5 +1,4 @@
 import React from "react";
-import s from "./App.module.css";
 import Header from "./component/Header/Header";
 import Producers from "./component/Side/Producers";
 import TobacoListContainer from "./component/TobacoList/TobacoListContainer";
