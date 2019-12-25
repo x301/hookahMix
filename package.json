@@ -17,7 +17,8 @@
     "redux-firestore": "^0.11.0",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "styled-normalize": "^8.0.6"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -41,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
     "googleapis": "^45.0.0"
   }
 }

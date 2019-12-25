@@ -1,11 +1,11 @@
 import React from "react";
-import s from "./Producers.module.css";
 import { NavLink } from "react-router-dom";
+import { ProducesrWrapper } from './Produsers.styled';
 export default props => {
 
   return (
-    <div className={s.wrapper}>
-      <div className={s.tobacoProducer}>
+    <ProducesrWrapper>
+      <div>
         <div>
           <NavLink to="/tobacco/Adalia">Adalia</NavLink>
         </div>
@@ -17,7 +17,7 @@ export default props => {
         </div>
 
       </div>
-    </div>
+    </ProducesrWrapper>
   );
 };
 

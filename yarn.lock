@@ -2415,7 +2415,7 @@ babel-plugin-named-asset-import@^0.3.4:
   resolved "https://registry.yarnpkg.com/babel-plugin-named-asset-import/-/babel-plugin-named-asset-import-0.3.4.tgz#4a8fc30e9a3e2b1f5ed36883386ab2d84e1089bd"
   integrity sha512-S6d+tEzc5Af1tKIMbsf2QirCcPdQ+mKUCY2H1nJj1DyA1ShwpsoxEOAwbWsG5gcXNV/olpvQd9vrUWRx4bnhpw==
 
-"babel-plugin-styled-components@>= 1":
+"babel-plugin-styled-components@>= 1", babel-plugin-styled-components@^1.10.6:
   version "1.10.6"
   resolved "https://registry.yarnpkg.com/babel-plugin-styled-components/-/babel-plugin-styled-components-1.10.6.tgz#f8782953751115faf09a9f92431436912c34006b"
   integrity sha512-gyQj/Zf1kQti66100PhrCRjI5ldjaze9O0M3emXRPAN80Zsf8+e1thpTpaXJXVHXtaM4/+dJEgZHyS9Its+8SA==
@@ -11473,6 +11473,11 @@ styled-components@^4.4.1:
     stylis "^3.5.0"
     stylis-rule-sheet "^0.0.10"
     supports-color "^5.5.0"
+
+styled-normalize@^8.0.6:
+  version "8.0.6"
+  resolved "https://registry.yarnpkg.com/styled-normalize/-/styled-normalize-8.0.6.tgz#f27f87292f46aa79ad6db6339aff5db529df3c91"
+  integrity sha512-tOnAD1+wV04aiVy6chaQA4u/EtkGiGZPlIBYvEfWlZQBrDqRhu9EdPyXlFzLWxpOmANoQelJqSOMlV3QNCDKkw==
 
 stylehacks@^4.0.0:
   version "4.0.3"

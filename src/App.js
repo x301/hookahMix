@@ -7,30 +7,31 @@ import { Route, Switch } from "react-router-dom";
 import BlenderContainer from './component/Blender/BlenderContainer';
 import MixesContainer from "./component/Mixes/MixesContainer";
 import FindMixesBtn from "./component/FindMixes/FindMixes";
+import { MainPageWrapper } from './App.styled';
 
 
 
 const App = ({ state }) => {
   return (
-    <div className={s.my_page}>
+    <MainPageWrapper>
       <Header />
-      <div className={s.wrapper}>
-        <Producers />
-        <Switch>
-          <Route
-            path="/tobacco/:id"
-            render={(props) => (
-              < TobacoListContainer dispatch={state.dispatch} />
-            )}
-          />
-          <Route path="/mixes"><MixesContainer></MixesContainer></Route>
+      <Producers />
+      <Switch>
+        <Route
+          path="/tobacco/:id"
+          render={(props) => (
+            < TobacoListContainer dispatch={state.dispatch} />
+          )}
+        />
+        <Route path="/mixes"><MixesContainer></MixesContainer></Route>
 
-        </Switch>
+      </Switch>
 
-        <BlenderContainer dispatch={state.dispatch} />
-        <FindMixesBtn></FindMixesBtn>
-      </div>
-    </div>
+      <BlenderContainer dispatch={state.dispatch} />
+      <FindMixesBtn></FindMixesBtn>
+    </MainPageWrapper>
+
+
   );
 };
 
