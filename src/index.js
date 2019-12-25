@@ -11,6 +11,8 @@ import { createFirestoreInstance } from 'redux-firestore'
 import rrfConf from './config/rrfConf';
 import firebase from "./config/fbConf"
 import { GlobalStyle } from "./assets/styles/base"
+import { ThemeProvider } from 'styled-components';
+import { theme } from './assets/styles/theme';
 
 
 const rrfProps = {
@@ -26,10 +28,12 @@ ReactDOM.render(
   <Router>
     <Provider store={store}>
       <ReduxFirestoreProvider  {...rrfProps}>
-        <React.Fragment>
-          <GlobalStyle></GlobalStyle>
-          <App state={store} />
-        </React.Fragment>
+        <ThemeProvider theme={theme}>
+          <React.Fragment>
+            <GlobalStyle></GlobalStyle>
+            <App state={store} />
+          </React.Fragment>
+        </ThemeProvider>
       </ReduxFirestoreProvider>
 
     </Provider>

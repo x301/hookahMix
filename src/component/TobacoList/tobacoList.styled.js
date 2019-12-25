@@ -5,7 +5,7 @@ export const TobacoListWrapper = styled.div`
   display: grid;
   grid-area: main;
   grid-template-areas: "Line-Name " "Line-Content ";
-  background-color: #ecf0f1;
+  background-color: ${({ theme }) => theme.primaryGrey};
   grid-template-rows: 0fr 0fr;
 
 `;
@@ -24,15 +24,12 @@ export const TobacoProducerName = styled.div`
 `;
 
 export const TobaccoElementWrapper = styled.div`
+
 &:hover {
-  color: red;
-  border-color: #2c3e50;
-  };
-  &:active {
-    border-color: #2c3e50; 
+    border-color: ${({ theme }) => theme.primaryHover};; 
   }
   cursor: pointer;
   border: 1px solid #bdc3c7;
   border-radius: 7px
-  
+
 `

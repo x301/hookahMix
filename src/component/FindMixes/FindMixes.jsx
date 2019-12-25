@@ -17,11 +17,11 @@ margin:  0 90px 0 -90px;
 `;
 
 const FindMixesBtn = styled(Button)`
-background-color:#34495e;
-color: white;
-border: 1px solid #34495e;
+background-color:${({ theme }) => theme.secondaryDark};
+color: ${({ theme }) => theme.primaryLight};
+border: 1px solid ${({ theme }) => theme.secondaryDark};
 font-family: "RobotoLight";
-box-shadow: 0 0 10px #34495e;
+box-shadow: 0 0 10px ${({ theme }) => theme.secondaryDark};
 font-size: 1.3em;
 &:hover {
 
