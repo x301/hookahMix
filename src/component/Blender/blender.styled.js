@@ -8,7 +8,6 @@ export const BLenderWrapper = styled.div`
   justify-content: start;
   background: ${({ theme }) => theme.primaryLight};
   text-align: left;
-  flex-wrap: wrap;
   position: absolute;
   width: 80vw;
   top: 0;
@@ -18,7 +17,8 @@ export const BLenderWrapper = styled.div`
   transform: ${({ activeBlender }) => activeBlender ? "translateY(0)" : "translateY(-100%)"}; 
   div {
     padding: .5em;
-    height: 100%
+    
+    display: inline-block;
     
   }
     
@@ -40,6 +40,13 @@ export const BLenderWrapper = styled.div`
   }
   
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    transform: translateY(0);
+    position: relative;
+    width: 25vw;
+
+   
+}
 `;
 
 export const BlenderCounter = styled.div`
@@ -51,4 +58,6 @@ p {
   text-align: left;
   margin: 0;
 }
+
+
 `;

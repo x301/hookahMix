@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 export const ProducesrWrapper = styled.div`
-    grid-area: sidebar;
-    display: flex;
+  grid-area: sidebar;
+  display: flex;
   flex-direction: column;
   justify-content: start;
   background: ${({ theme }) => theme.primaryLight};
@@ -29,5 +29,12 @@ export const ProducesrWrapper = styled.div`
       }
 
 
+  }
+
+  @media ${({ theme }) => theme.device.tablet} {
+    transform: translateX(0);
+    position: relative;
+    max-width: 20vw;
+    
   }
 `;

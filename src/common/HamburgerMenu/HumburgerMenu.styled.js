@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from './../../assets/styles/theme';
 
 export const StyledHamburger = styled.button`
   position: absolute;
@@ -43,5 +44,8 @@ export const StyledHamburger = styled.button`
     }
   }
 
+@media ${({ theme }) => theme.device.tablet} {
+  display :none
+}
 
 `;

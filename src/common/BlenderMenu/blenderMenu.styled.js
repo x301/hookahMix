@@ -21,4 +21,8 @@ div {
     padding-top: 15px;
      
  }
+
+ @media ${({ theme }) => theme.device.tablet} {
+  display: none
+}
 `
