@@ -7,7 +7,7 @@ import Blender from "./Blender";
 
 
 
-const BlenderContainer = ({ dispatch }) => {
+const BlenderContainer = ({ dispatch, activeBlender, getBlenderCount }) => {
   const getBlender = useSelector(state => state.tobacoListPage.blender)
   const dellTobacoItem = (event) => {
 
@@ -21,7 +21,7 @@ const BlenderContainer = ({ dispatch }) => {
     }))
 
   }
-  return <Blender blender={getBlender} dellItem={dellTobacoItem} />;
+  return <Blender blender={getBlender} dellItem={dellTobacoItem} activeBlender={activeBlender} getBlenderCount={getBlenderCount} />;
 };
 
 export default BlenderContainer

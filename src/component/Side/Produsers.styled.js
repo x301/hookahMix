@@ -23,7 +23,6 @@ export const ProducesrWrapper = styled.div`
           text-decoration: none;
           font-size: 1.5rem;
           text-transform: uppercase;
-          padding: 3rem 0;
           font-family: "RobotoRegular";
           letter-spacing: .3rem;
           transition: color 0.3s linear;
