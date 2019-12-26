@@ -33,10 +33,19 @@ const TobacoListContainer = ({ dispatch }) => {
     const currentTobaco = event.currentTarget.textContent
     if (getBlender[getTobacoList.name]) {
       const findTobaco = getBlender[getTobacoList.name].tobacoItems.find(e => e === currentTobaco)
-      !(findTobaco) && dispatch(AddInBlenderOnlyItems({
-        name: getTobacoList.name,
-        tobacoItems: event.currentTarget.textContent
-      }))
+
+
+      if (!(findTobaco)) {
+        dispatch(AddInBlenderOnlyItems({
+          name: getTobacoList.name,
+          tobacoItems: event.currentTarget.textContent
+        }))
+      } else {
+        dispatch(dellItemFromBlender({
+          name: getTobacoList.name,
+          tobacoItems: event.currentTarget.textContent
+        }))
+      }
 
     } else {
       dispatch(AddInBlender({

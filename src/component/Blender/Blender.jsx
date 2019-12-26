@@ -9,7 +9,7 @@ export default ({ blender, dellItem, activeBlender, getBlenderCount }) => {
   const blenderItems = Object.entries(blender).map(e => {
     const tobacoItems = e[1].tobacoItems.map(e => <span>{e}</span>)
     return <div onClick={dellItem}>
-      <span className={"tobaccoName"}>{e[0].concat(":")}</span>
+      <span className={"tobaccoName"} >{e[0].concat(":")}</span>
       {tobacoItems}
     </div>
   })
