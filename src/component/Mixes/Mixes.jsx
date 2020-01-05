@@ -1,23 +1,35 @@
 import React from "react";
-import { MixesWrapper, MixesPageWrapper, MixesItemWrapper, TobacoName, TobacoItem, TobacoMix } from "./MixesStyled";
-
+import { MixesWrapper, MixesPageWrapper, MixesItemWrapper, TobacoMix } from "./MixesStyled";
+import { Chart } from "react-google-charts";
 
 export const Mixes = ({ mixes }) => {
     const findedMixes = mixes.map(mix => {
-        const mixesItems = Object.entries(mix).map(e => {
+        let tobacoElement = [['Task', 'Hours per Day']]
+        Object.entries(mix).forEach(name => {
 
-            const tobacoElement = Object.entries(e[1]).map(e => {
-
-                return <TobacoItem  >{e[0]}</TobacoItem>
+            Object.entries(name[1]).forEach(e => {
+                tobacoElement.push([`${name[0]}- ${e[0]}`, e[1]])
             })
 
-
-            return <TobacoMix>
-                <TobacoName >{e[0]}</TobacoName>
-                {tobacoElement}
-            </TobacoMix>
         })
-        return <MixesItemWrapper>{mixesItems}</MixesItemWrapper>
+        console.log(tobacoElement)
+        return <MixesItemWrapper>
+            <div>
+                <Chart
+                    width={'300px'}
+                    height={'25y0px'}
+                    chartType="PieChart"
+                    loader={<div>Loading Chart</div>}
+                    data={tobacoElement}
+                    options={{
+                        title: 'My Daily Activities',
+                        // Just add this option
+                        is3D: true,
+                    }}
+                    rootProps={{ 'data-testid': '2' }}
+                ></Chart>
+            </div>
+        </MixesItemWrapper>
     })
 
     return (

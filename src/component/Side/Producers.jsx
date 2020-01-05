@@ -1,23 +1,23 @@
 import React from "react";
-import s from "./Producers.module.css";
 import { NavLink } from "react-router-dom";
-export default props => {
+import { ProducesrWrapper } from './Produsers.styled';
+
+
+export default ({ activeSide, setActiveSide }) => {
 
   return (
-    <div className={s.wrapper}>
-      <div className={s.tobacoProducer}>
-        <div>
-          <NavLink to="/tobacco/Adalia">Adalia</NavLink>
-        </div>
-        <div>
-          <NavLink to="/tobacco/Alfacker">Alfacker</NavLink>
-        </div>
-        <div>
-          <NavLink to="/tobacco/DarkSide">DarkSide</NavLink>
-        </div>
+    <ProducesrWrapper activeSide={activeSide} onClick={() => setActiveSide(!activeSide)}>
+      <nav>
+        <NavLink to="/tobacco/Adalia">Adalia</NavLink>
+      </nav>
+      <nav>
+        <NavLink to="/tobacco/Alfacker">Alfacker</NavLink>
+      </nav>
+      <nav>
+        <NavLink to="/tobacco/DarkSide">DarkSide</NavLink>
+      </nav>
 
-      </div>
-    </div>
+    </ProducesrWrapper>
   );
 };
 

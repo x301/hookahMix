@@ -7,7 +7,6 @@ import { isEmpty, isLoaded } from 'react-redux-firebase'
 
 const MixesContainer = () => {
     const getFindMixes = useSelector(state => state.mixesListPage.mixes)
-    console.log(getFindMixes)
     return (
         !isEmpty(getFindMixes) ?
             isLoaded(getFindMixes) ? <Mixes mixes={getFindMixes}></Mixes> : "Mixes not found"

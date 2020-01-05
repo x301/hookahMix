@@ -1,29 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import { BLenderWrapper } from "./blender.styled";
+import { BLenderWrapper, BlenderCounter } from "./blender.styled";
 
-const Elements = styled.div`
-&:hover {
-  color: black;
-  border-color: red;
-  };
-  color: red;
-  cursor: pointer;
-  
-`;
 
-export default ({ blender, dellItem }) => {
 
+export default ({ blender, dellItem, activeBlender, getBlenderCount }) => {
 
   const blenderItems = Object.entries(blender).map(e => {
-    const tobacoItems = e[1].tobacoItems.map(e => <Elements  >{e}</Elements >)
+    const tobacoItems = e[1].tobacoItems.map(e => <span>{e}</span>)
     return <div onClick={dellItem}>
-      <div className={"tobaccoName"}>{e[0]}</div>
+      <span className={"tobaccoName"} >{e[0].concat(":")}</span>
       {tobacoItems}
     </div>
   })
 
-  return <BLenderWrapper>
+  return <BLenderWrapper activeBlender={activeBlender}>
+    <BlenderCounter>
+      <p>{getBlenderCount ? `В миксере ${getBlenderCount} вкусов` : `В миксере нет вкусов`}</p>
+    </BlenderCounter>
     {blenderItems}
   </BLenderWrapper>;
 };

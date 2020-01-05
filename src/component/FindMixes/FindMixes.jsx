@@ -3,24 +3,29 @@ import styled from "styled-components"
 import { useHistory } from "react-router-dom"
 import { useSelector, useDispatch } from 'react-redux';
 import { getMixes } from "../Mixes/mixes-reducer"
+import { Button } from './../../assets/common/buttons';
 
 
 const FindMixesWrapper = styled.div`
 position: fixed;
-width: 125px;
+width: 180px;
 height: 50px;
-left: 50%;
-bottom: 0px;
-margin: auto;
+left: 50vw;
+bottom: 10px;
+margin:  0 90px 0 -90px;
 
 `;
 
-const MixesBtn = styled.button`
-max-width:100%;
-height: auto;
-display: block;
-margin: 0 auto;
-color: black;
+const FindMixesBtn = styled(Button)`
+background-color:${({ theme }) => theme.secondaryDark};
+color: ${({ theme }) => theme.primaryLight};
+border: 1px solid ${({ theme }) => theme.secondaryDark};
+font-family: "RobotoLight";
+box-shadow: 0 0 10px ${({ theme }) => theme.secondaryDark};
+font-size: 1.3em;
+&:hover {
+
+}
 `;
 
 
@@ -35,6 +40,6 @@ export default () => {
     }
 
     return (
-        <FindMixesWrapper><MixesBtn onClick={handleClick}>Подобрать миксы</MixesBtn></FindMixesWrapper>
+        <FindMixesWrapper><FindMixesBtn onClick={handleClick}>Подобрать миксы</FindMixesBtn></FindMixesWrapper>
     )
 }
