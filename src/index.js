@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import store from "./redux/redux-store";
+import { store, persistor } from "./redux/redux-store";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux"
 import { ReduxFirestoreProvider } from 'react-redux-firebase'
@@ -13,7 +13,7 @@ import firebase from "./config/fbConf"
 import { GlobalStyle } from "./assets/styles/base"
 import { ThemeProvider } from 'styled-components';
 import { theme } from './assets/styles/theme';
-
+import { PersistGate } from 'redux-persist/integration/react'
 
 const rrfProps = {
   firebase,
@@ -23,18 +23,20 @@ const rrfProps = {
 
 }
 
-
 ReactDOM.render(
   <Router>
     <Provider store={store}>
-      <ReduxFirestoreProvider  {...rrfProps}>
-        <ThemeProvider theme={theme}>
-          <React.Fragment>
-            <GlobalStyle></GlobalStyle>
-            <App state={store} />
-          </React.Fragment>
-        </ThemeProvider>
-      </ReduxFirestoreProvider>
+      <PersistGate loading={null} persistor={persistor}>
+        <ReduxFirestoreProvider  {...rrfProps}>
+          <ThemeProvider theme={theme}>
+            <React.Fragment>
+              <GlobalStyle></GlobalStyle>
+              <App state={store} />
+            </React.Fragment>
+          </ThemeProvider>
+        </ReduxFirestoreProvider>
+      </PersistGate>
+
 
     </Provider>
   </Router>,

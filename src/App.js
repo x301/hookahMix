@@ -11,8 +11,6 @@ import HamburgerMenu from "./common/HamburgerMenu/HumburgerMenu"
 import BlenderMenu from "./common/BlenderMenu/BlenderMenu"
 import { useSelector } from 'react-redux';
 
-
-
 const App = ({ state }) => {
   const [activeSide, setActiveSide] = useState(false)
   const [activeBlender, setActiveBlender] = useState(false)
