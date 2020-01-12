@@ -9,7 +9,6 @@ export const BLenderWrapper = styled.div`
   background: ${({ theme }) => theme.primaryLight};
   text-align: left;
   position: absolute;
-  width: 80vw;
   top: 0;
   right: 0;
   transition: transform 0.3s ease-in-out;
@@ -43,7 +42,7 @@ export const BLenderWrapper = styled.div`
   @media ${({ theme }) => theme.device.tablet} {
     transform: translateY(0);
     position: relative;
-    width: 25vw;
+    width: 15vw;
 
    
 }

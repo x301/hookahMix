@@ -16,6 +16,8 @@ export const TobacoElements = styled.div`
     grid-gap: 15px;
     justify-content: center;
     
+    
+    
 `;
 export const TobacoProducerName = styled.div`
   font-family: "RobotoBold";
@@ -24,7 +26,8 @@ export const TobacoProducerName = styled.div`
 `;
 
 export const TobaccoElementWrapper = styled.div`
-
+ display: grid;
+ align-items: center;
 &:hover {
     border-color: ${({ theme }) => theme.primaryHover}; 
   }

@@ -7,8 +7,9 @@ export const ProducesrWrapper = styled.div`
   justify-content: start;
   background: ${({ theme }) => theme.primaryLight};
   height: 100vh;
+  width: 13rem;
   text-align: left;
-  padding: 1rem;
+  padding: .5rem;
   padding-top: 2.4rem;
   position: absolute;
   top: 0;
@@ -17,14 +18,14 @@ export const ProducesrWrapper = styled.div`
   transform: ${({ activeSide }) => activeSide ? 'translateX(0)' : 'translateX(-100%)'};
 
   nav {
-      border-bottom: 1px solid ${({ theme }) => theme.secondaryDark} 
+      border-bottom: 1px solid ${({ theme }) => theme.secondaryDark};
       a {
           color: ${({ theme }) => theme.secondaryDark} ;
           text-decoration: none;
-          font-size: 1.5rem;
+          font-size: 1.4rem;
           text-transform: uppercase;
           font-family: "RobotoRegular";
-          letter-spacing: .3rem;
+          letter-spacing: .2rem;
           transition: color 0.3s linear;
       }
 

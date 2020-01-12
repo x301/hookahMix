@@ -3,7 +3,9 @@ import { MixesWrapper, MixesPageWrapper, MixesItemWrapper, TobacoMix } from "./M
 import { Chart } from "react-google-charts";
 
 export const Mixes = ({ mixes }) => {
+    console.log("Вошел в миксы")
     const findedMixes = mixes.map(mix => {
+
         let tobacoElement = [['Task', 'Hours per Day']]
         Object.entries(mix).forEach(name => {
 
@@ -14,21 +16,31 @@ export const Mixes = ({ mixes }) => {
         })
         console.log(tobacoElement)
         return <MixesItemWrapper>
-            <div>
-                <Chart
-                    width={'300px'}
-                    height={'25y0px'}
-                    chartType="PieChart"
-                    loader={<div>Loading Chart</div>}
-                    data={tobacoElement}
-                    options={{
-                        title: 'My Daily Activities',
-                        // Just add this option
-                        is3D: true,
-                    }}
-                    rootProps={{ 'data-testid': '2' }}
-                ></Chart>
-            </div>
+
+            <Chart
+                chartType="PieChart"
+                loader={<div>Loading Chart</div>}
+                data={tobacoElement}
+                options={{
+                    title: '',
+                    // Just add this option
+
+                    chartArea: {
+                        left: 0,
+                        width: "97%",
+                        height: "100%"
+
+                    },
+                    legend: {
+                        textStyle: { fontSize: 12 },
+                        position: "right",
+                        alignment: "center"
+
+                    }
+                }}
+                rootProps={{ 'data-testid': '2' }}
+            ></Chart>
+
         </MixesItemWrapper>
     })
 
