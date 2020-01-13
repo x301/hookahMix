@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "./component/Header/Header";
-import Producers from "./component/Side/Producers";
 import TobacoListContainer from "./component/TobacoList/TobacoListContainer";
 import { Route, Switch } from "react-router-dom";
 import BlenderContainer from './component/Blender/BlenderContainer';
@@ -9,12 +8,9 @@ import FindMixesBtn from "./component/FindMixes/FindMixes";
 import { MainPageWrapper } from './App.styled';
 import HamburgerMenu from "./common/HamburgerMenu/HumburgerMenu"
 import BlenderMenu from "./common/BlenderMenu/BlenderMenu"
-import { useSelector } from 'react-redux';
+import ProducersContainer from './component/Side/ProducersContainer';
 
 const App = ({ state }) => {
-  const [activeSide, setActiveSide] = useState(false)
-  const [activeBlender, setActiveBlender] = useState(false)
-  const getBlenderCount = useSelector(state => state.tobacoListPage.blenderCount)
   return (
     <MainPageWrapper>
       <Header />
@@ -28,11 +24,11 @@ const App = ({ state }) => {
         <Route path="/mixes"><MixesContainer></MixesContainer></Route>
       </Switch>
 
-      <BlenderContainer dispatch={state.dispatch} activeBlender={activeBlender} getBlenderCount={getBlenderCount} />
-      <HamburgerMenu activeSide={activeSide} setActiveSide={setActiveSide} ></HamburgerMenu>
-      <Producers activeSide={activeSide} setActiveSide={setActiveSide} />
+      <BlenderContainer dispatch={state.dispatch} />
+      <HamburgerMenu ></HamburgerMenu>
+      <ProducersContainer />
       <FindMixesBtn></FindMixesBtn>
-      <BlenderMenu activeBlender={activeBlender} setActiveBlender={setActiveBlender} BlenderCount={getBlenderCount}></BlenderMenu>
+      <BlenderMenu ></BlenderMenu>
     </MainPageWrapper>
 
 

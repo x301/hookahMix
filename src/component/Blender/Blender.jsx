@@ -4,8 +4,8 @@ import { BLenderWrapper, BlenderCounter } from "./blender.styled";
 
 
 
-export default ({ blender, dellItem, activeBlender, getBlenderCount }) => {
-
+export default ({ blender, dellItem, activeMenu, getBlenderCount }) => {
+  console.log(activeMenu)
   const blenderItems = Object.entries(blender).map(e => {
     const tobacoItems = e[1].tobacoItems.map(e => <span>{e}</span>)
     return <div onClick={dellItem}>
@@ -14,7 +14,7 @@ export default ({ blender, dellItem, activeBlender, getBlenderCount }) => {
     </div>
   })
 
-  return <BLenderWrapper activeBlender={activeBlender}>
+  return <BLenderWrapper activeMenu={activeMenu}>
     <BlenderCounter>
       <p>{getBlenderCount ? `В миксере ${getBlenderCount} вкусов` : `В миксере нет вкусов`}</p>
     </BlenderCounter>

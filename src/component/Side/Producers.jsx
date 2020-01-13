@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 import { ProducesrWrapper } from './Produsers.styled';
 
 
-export default ({ activeSide, setActiveSide }) => {
+export default ({ activeSide }) => {
 
   return (
-    <ProducesrWrapper activeSide={activeSide} onClick={() => setActiveSide(!activeSide)}>
+    <ProducesrWrapper activeSide={activeSide}>
       <nav>
         <NavLink to="/tobacco/Adalia">Adalia</NavLink>
       </nav>
