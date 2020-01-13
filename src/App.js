@@ -29,7 +29,7 @@ const App = ({ state }) => {
       </Switch>
 
       <BlenderContainer dispatch={state.dispatch} activeBlender={activeBlender} getBlenderCount={getBlenderCount} />
-      <HamburgerMenu activeSide={activeSide} setActiveSide={setActiveSide} ></HamburgerMenu>
+      <HamburgerMenu dispatch={state.dispatch} ></HamburgerMenu>
       <ProducersContainer activeSide={activeSide} setActiveSide={setActiveSide} />
       <FindMixesBtn></FindMixesBtn>
       <BlenderMenu activeBlender={activeBlender} setActiveBlender={setActiveBlender} BlenderCount={getBlenderCount}></BlenderMenu>

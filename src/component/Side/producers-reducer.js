@@ -22,5 +22,5 @@ export const producersReducer = (state = initialState, action) => {
     }
 }
 
-const setActiveSide = (status) => ({ type: SET_ACTIVE_SIDE })
-const setDeactiveteSide = (status) => ({ type: SET_DEACTIVETE_SIDE })
+export const setActiveSide = () => ({ type: SET_ACTIVE_SIDE })
+export const setDeactiveteSide = () => ({ type: SET_DEACTIVETE_SIDE })
