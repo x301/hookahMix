@@ -1,26 +1,18 @@
 import React from "react";
-import { setTobacoListAC } from "../TobacoList/tobacoList-reducer";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
+import Producers from "./Producers";
 
 
 
-let mapStateToProps = (state) => {
-  return {
-    producersName: state.tobacoList.tobacoProducers
-  }
+
+
+const ProducersContainer = () => {
+  const getStatusSide = useSelector(state => state.producersPage.activeSide)
+  return (
+    <Producers activeSide={getStatusSide}></Producers>
+  )
 }
-
-let mapDispatchToProps =(dispatch) => {
-  return {
-    setTobacoList: (tobacoLIst) => {
-      dispatch(setTobacoListAC(tobacoLIst))
-      //console.log(tobacoLIst)
-    }
-  }
- }
-
- const ProducersContainer = connect(mapStateToProps,mapDispatchToProps )(Producers) 
-
+export default ProducersContainer;
 
 
 

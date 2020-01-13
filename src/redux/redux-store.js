@@ -7,6 +7,7 @@ import { tobacoListReducer } from "../component/TobacoList/tobacoList-reducer";
 import { mixesReducer } from "../component/Mixes/mixes-reducer";
 import { firestoreReducer } from 'redux-firestore'
 import { firebaseReducer, getFirebase } from 'react-redux-firebase'
+import { producersReducer } from './../component/Side/producers-reducer';
 
 const persistConfig = {
     key: 'root',
@@ -17,6 +18,7 @@ const persistConfig = {
 let rootReducers = combineReducers({
     tobacoListPage: tobacoListReducer,
     mixesListPage: mixesReducer,
+    producersPage: producersReducer,
     firestore: firestoreReducer,
     firebase: firebaseReducer
 });

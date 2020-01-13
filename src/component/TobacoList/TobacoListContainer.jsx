@@ -8,7 +8,6 @@ import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
 
 const TobacoListContainer = ({ dispatch }) => {
 
-
   const tobacoName = useParams().id
 
   const getTobacoList = useSelector((({ firestore }) => {
