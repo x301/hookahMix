@@ -12,11 +12,11 @@ export const BLenderWrapper = styled.div`
   top: 0;
   right: 0;
   transition: transform 0.3s ease-in-out;
+  max-width: 75vw;
   padding: .5em;
-  transform: ${({ activeBlender }) => activeBlender ? "translateY(0)" : "translateY(-100%)"}; 
+  transform: ${({ activeMenu }) => activeMenu ? "translateY(0)" : "translateY(-100%)"}; 
   div {
     padding: .5em;
-    
     display: inline-block;
     
   }
@@ -43,8 +43,7 @@ export const BLenderWrapper = styled.div`
     transform: translateY(0);
     position: relative;
     width: 15vw;
-
-   
+  
 }
 `;
 
