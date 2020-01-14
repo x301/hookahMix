@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Button } from './../../assets/common/buttons';
+import { Button } from '../../assets/common/buttons';
 
 export const MixesPageWrapper = styled.div`
 
@@ -10,8 +10,9 @@ display: grid;
 grid-gap: 1%;
 grid-template-columns: 1fr;
 background-color: #ecf0f1;
-padding: .5rem;
-grid-template-columns: 1fr;
+padding: .2rem;
+@media ${({ theme }) => theme.device.tablet} {
+    grid-template-columns: 1fr 1fr;}
 `;
 
 export const MixesItemWrapper = styled.div`
@@ -33,4 +34,6 @@ div {
         margin-left: .1rem
     }
 }
+
+
 `;

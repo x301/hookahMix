@@ -3,9 +3,8 @@ import styled from "styled-components";
 import { BLenderWrapper, BlenderCounter } from "./blender.styled";
 
 
-
 export default ({ blender, dellItem, activeMenu, getBlenderCount }) => {
-  console.log(activeMenu)
+
   const blenderItems = Object.entries(blender).map(e => {
     const tobacoItems = e[1].tobacoItems.map(e => <span>{e}</span>)
     return <div onClick={dellItem}>

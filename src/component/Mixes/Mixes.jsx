@@ -1,20 +1,19 @@
 import React from "react";
-import { MixesWrapper, MixesPageWrapper, MixesItemWrapper, TobacoMix } from "./MixesStyled";
+import { MixesWrapper, MixesPageWrapper, MixesItemWrapper, TobacoMix } from "./mixes.styled";
 import { Chart } from "react-google-charts";
 
 export const Mixes = ({ mixes }) => {
-    console.log("Вошел в миксы")
+
     const findedMixes = mixes.map(mix => {
 
         let tobacoElement = [['Task', 'Hours per Day']]
         Object.entries(mix).forEach(name => {
 
             Object.entries(name[1]).forEach(e => {
-                tobacoElement.push([`${name[0]}- ${e[0]}`, e[1]])
+                tobacoElement.push([`${name[0]}: ${e[0]}`, e[1]])
             })
 
         })
-        console.log(tobacoElement)
         return <MixesItemWrapper>
 
             <Chart
@@ -27,8 +26,8 @@ export const Mixes = ({ mixes }) => {
 
                     chartArea: {
                         left: 0,
-                        width: "97%",
-                        height: "100%"
+                        width: "95%",
+                        height: "80%"
 
                     },
                     legend: {
