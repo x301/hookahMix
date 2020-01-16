@@ -8,7 +8,7 @@ export default ({ activeSide }) => {
   return (
     <ProducesrWrapper activeSide={activeSide}>
       <nav>
-        <NavLink to="/tobacco/Adalia">Adalia</NavLink>
+        <NavLink to="/tobacco/Adalya">Adalya</NavLink>
       </nav>
 
       <nav>
