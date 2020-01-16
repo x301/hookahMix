@@ -38,9 +38,11 @@ export const tobacoListReducer = (state = initialState, action) => {
 
             stateCopy.blender[action.items.name].tobacoItems.push(action.items.tobacoItems);
             stateCopy.blenderCount++;
+
             return stateCopy
 
         case DEL_TOBACO_ITEMS_FROM_BLENDER:
+
             if (stateCopy.blender[action.items.name].tobacoItems.length > 1) {
                 stateCopy.blender[action.items.name].tobacoItems.splice(action.items.tobacoIndex, 1)
 
@@ -48,10 +50,12 @@ export const tobacoListReducer = (state = initialState, action) => {
                 stateCopy.blender[action.items.name].tobacoItems.splice(action.items.tobacoIndex, 1)
                 delete stateCopy.blender[action.items.name]
             }
-            stateCopy.blenderCount--;
+            stateCopy.blenderCount && stateCopy.blenderCount--;
+
             return stateCopy
 
         case DEL_ALL_BLENDER_ITEMS:
+
             stateCopy.blender = {
 
             };
@@ -59,11 +63,13 @@ export const tobacoListReducer = (state = initialState, action) => {
             return stateCopy
 
         case SET_ACTIVE_MOBILE_MENU_BLENDER:
+
             return state = {
                 ...state,
                 activeStatus: true
             }
         case SET_DEACTIVETE_MOBILE_MENU_BLENDER:
+
             return state = {
                 ...state,
                 activeStatus: false
