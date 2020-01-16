@@ -25,8 +25,8 @@ export const BLenderWrapper = styled.div`
     display: inline-block;
     height: 1.2em;
     padding: 0 .5em;
-    margin-right: .5em;
-    margin-bottom: 1em;
+    margin-right: 2%;
+    margin-bottom: 5%;
     cursor: pointer;
     border: 1px solid #bdc3c7;
     border-radius: .3em;
