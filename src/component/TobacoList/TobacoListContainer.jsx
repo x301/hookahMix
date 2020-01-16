@@ -1,7 +1,7 @@
 import React from "react";
 import TobacoList from "./TobacoList";
 import { useSelector } from "react-redux";
-import { AddInBlender, AddInBlenderOnlyItems, dellItemFromBlender } from "./tobacoList-reducer";
+import { addInBlender, addInBlenderOnlyItems, dellItemFromBlender } from "./tobacoList-reducer";
 import { useParams } from "react-router-dom"
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
 
@@ -36,7 +36,7 @@ const TobacoListContainer = ({ dispatch }) => {
 
 
       if (!(findTobaco)) {
-        dispatch(AddInBlenderOnlyItems({
+        dispatch(addInBlenderOnlyItems({
           name: getTobacoList.name,
           tobacoItems: event.currentTarget.textContent
         }))
@@ -48,7 +48,7 @@ const TobacoListContainer = ({ dispatch }) => {
       }
 
     } else {
-      dispatch(AddInBlender({
+      dispatch(addInBlender({
         name: getTobacoList.name,
         tobacoItems: event.currentTarget.textContent
       }))
