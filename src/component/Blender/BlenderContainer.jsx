@@ -12,7 +12,7 @@ const BlenderContainer = ({ dispatch }) => {
   const getBlender = useSelector(state => state.tobacoListPage.blender)
   const getBlenderActiveMenu = useSelector(state => state.tobacoListPage.activeStatus)
   const getBlenderCount = useSelector(state => state.tobacoListPage.blenderCount)
-  console.log(getBlenderActiveMenu)
+
   const dellTobacoItem = (event) => {
 
     const name = event.target.parentNode.querySelector(".tobaccoName").textContent.slice(0, -1);

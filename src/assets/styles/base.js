@@ -3,7 +3,13 @@ import { normalize } from 'styled-normalize'
 export const GlobalStyle = createGlobalStyle`
   ${normalize}
 body {
-font-size: 16px
+font-size: 16px;
+
+span {
+  padding: 0;
+  margin: 0;
+}
+
 }
   @font-face {
     font-family: "RobotoBold";

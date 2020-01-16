@@ -1,5 +1,6 @@
 
 import styled from "styled-components"
+import BlenderContainer from './BlenderContainer';
 
 export const BLenderWrapper = styled.div`
   grid-area: Blender;
@@ -17,11 +18,19 @@ export const BLenderWrapper = styled.div`
   transform: ${({ activeMenu }) => activeMenu ? "translateY(0)" : "translateY(-100%)"}; 
   div {
     padding: .5em;
-    
-    
+     
   }
     
-  span {
+  
+  @media ${({ theme }) => theme.device.tablet} {
+    transform: translateY(0);
+    position: relative;
+    width: 20vw;
+  
+}
+`;
+
+export const BLenderItems = styled.span`
     display: inline-block;
     height: 1.2em;
     padding: 0 .5em;
@@ -37,25 +46,24 @@ export const BLenderWrapper = styled.div`
     &:hover {
     border-color: ${({ theme }) => theme.primaryHover}; 
   }
-  
-  }
-  @media ${({ theme }) => theme.device.tablet} {
-    transform: translateY(0);
-    position: relative;
-    width: 20vw;
-  
-}
-`;
+`
 
-export const BlenderCounter = styled.div`
-padding: .5rem;
+export const BlenderCounterWrapper = styled.div`
+padding: .1rem;
 width: 80%;
 border-bottom: 1px solid black;
+span {
+  display: inline-block;
+  padding: 1%;
+  :first-child{
+      cursor: pointer;
+    }
+}
 p {
   font-size: 1em;
   text-align: left;
   margin: 0;
 }
 
-
 `;
+
