@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const MainPageWrapper = styled.div`
-height: 100vh;
+  height: 100vh;
   background-color: white;
 
   @media ${({ theme }) => theme.device.tablet} {

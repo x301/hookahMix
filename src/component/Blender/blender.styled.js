@@ -17,7 +17,7 @@ export const BLenderWrapper = styled.div`
   transform: ${({ activeMenu }) => activeMenu ? "translateY(0)" : "translateY(-100%)"}; 
   div {
     padding: .5em;
-    display: inline-block;
+    
     
   }
     
@@ -42,7 +42,7 @@ export const BLenderWrapper = styled.div`
   @media ${({ theme }) => theme.device.tablet} {
     transform: translateY(0);
     position: relative;
-    width: 15vw;
+    width: 20vw;
   
 }
 `;

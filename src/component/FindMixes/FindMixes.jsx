@@ -32,7 +32,7 @@ font-size: 1.3em;
 export default () => {
     let history = useHistory()
     const dispatch = useDispatch()
-    const getBlender = useSelector(state => state.tobacoListPage.blender)
+    const getBlender = useSelector(state => state.tobacoListPage.blender);
     const handleClick = () => {
         dispatch(getMixes(getBlender))
 
