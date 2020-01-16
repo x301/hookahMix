@@ -5,7 +5,7 @@ import cleanActiveBtn from "../../assets/img/clean-icon-red.png";
 import cleanBtn from "../../assets/img/clean-icon-black.png";
 
 
-export default ({ blender, dellItem, activeMenu, getBlenderCount }) => {
+export default ({ blender, dellItem, activeMenu, getBlenderCount, dellAllitems }) => {
 
   const blenderItems = Object.entries(blender).map(e => {
     const tobacoItems = e[1].tobacoItems.map(e => <BLenderItems>{e}</BLenderItems>)
@@ -17,7 +17,7 @@ export default ({ blender, dellItem, activeMenu, getBlenderCount }) => {
 
   return <BLenderWrapper activeMenu={activeMenu}>
     <BlenderCounterWrapper>
-      <span><img src={blenderItems.length ? cleanActiveBtn : cleanBtn}></img></span>
+      <span onClick={dellAllitems}><img src={blenderItems.length ? cleanActiveBtn : cleanBtn}></img></span>
       <span><p>{getBlenderCount ? `В миксере ${getBlenderCount} вкусов` : `В миксере нет вкусов`}</p></span>
     </BlenderCounterWrapper>
     {blenderItems}
