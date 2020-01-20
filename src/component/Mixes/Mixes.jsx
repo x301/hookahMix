@@ -4,8 +4,8 @@ import { Chart } from "react-google-charts";
 import Paginator from "../../common/Paginator/Paginator";
 export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate, currentPage }) => {
 
-    const findedMixes = currentMix.map(mix => {
-
+    const findedMixes = currentMix.map((mix, i) => {
+        console.log(mix)
         let tobacoElement = [['Task', 'Hours per Day']];
         let mixTittle = [];
         Object.entries(mix).forEach(name => {
@@ -16,10 +16,7 @@ export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate, currentP
             })
 
         })
-
-
-
-        return <MixesItemWrapper>
+        return <MixesItemWrapper key={i}>
 
             <Chart
                 chartType="PieChart"

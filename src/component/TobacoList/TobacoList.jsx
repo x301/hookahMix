@@ -11,8 +11,8 @@ export default ({ tobacoList, addTobacoblender }) => {
   return (
     <TobacoListWrapper >
       <TitleTobaccoName>{tobacoList.name}</TitleTobaccoName>
-      <TobacoElements>{tobacoList.tobacoItems.map(e =>
-        <TobaccoElementWrapper onClick={addTobacoblender}>
+      <TobacoElements>{tobacoList.tobacoItems.map((e, i) =>
+        <TobaccoElementWrapper key={i} onClick={addTobacoblender}>
           <TextELement>{e}</TextELement>
         </TobaccoElementWrapper>
       )}</TobacoElements>

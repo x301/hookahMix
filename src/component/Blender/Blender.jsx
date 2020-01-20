@@ -8,8 +8,8 @@ import cleanBtn from "../../assets/img/clean-icon-black.png";
 export default ({ blender, dellItem, activeMenu, getBlenderCount, dellAllitems }) => {
 
   const blenderItems = Object.entries(blender).map(e => {
-    const tobacoItems = e[1].tobacoItems.map(e => <BLenderItems>{e}</BLenderItems>)
-    return <div onClick={dellItem}>
+    const tobacoItems = e[1].tobacoItems.map((e, i) => <BLenderItems key={i}>{e}</BLenderItems>)
+    return <div key={e[0]} onClick={dellItem}>
       <BLenderItems className={"tobaccoName"} >{e[0].concat(":")}</BLenderItems>
       {tobacoItems}
     </div>
