@@ -8,10 +8,11 @@ import { MainPageWrapper } from './App.styled';
 import HamburgerMenu from "./common/HamburgerMenu/HumburgerMenu"
 import BlenderMenu from "./common/BlenderMenu/BlenderMenu"
 import ProducersContainer from './component/Side/ProducersContainer';
-import MainPreloader from './common/MainPreloader/MainPreloader';
-const MixesContainer = React.lazy(() => import("./component/Mixes/MixesContainer"));
-const App = ({ state }) => {
+import MixesContainer from './component/Mixes/MixesContainer';
 
+
+
+const App = ({ state }) => {
 
   return (
     <MainPageWrapper>
@@ -23,11 +24,9 @@ const App = ({ state }) => {
             < TobacoListContainer dispatch={state.dispatch} />
           )}
         />
-
         <Route path="/mixes">
-          <Suspense fallback={<MainPreloader></MainPreloader>}>
-            <MixesContainer></MixesContainer>
-          </Suspense>
+
+          <MixesContainer></MixesContainer>
 
         </Route>
       </Switch>

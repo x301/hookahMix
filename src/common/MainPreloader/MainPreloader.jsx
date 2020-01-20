@@ -1,6 +1,5 @@
 import React from 'react'
 import { PreloaderWrapper, CircleWrapper, DotWrapper, Dot } from './mainPreloader.styled';
-import { render } from 'react-dom';
 
 const MainPreloader = () => {
 

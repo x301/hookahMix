@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom"
 import { useSelector, useDispatch } from 'react-redux';
 import { getMixes } from "../Mixes/mixes-reducer"
 import { FindMixesBtn } from './../../assets/common/buttons';
-
+import { setFetchingStatus } from "../Mixes/mixes-reducer"
 
 const FindMixesWrapper = styled.div`
 position: fixed;
@@ -21,12 +21,18 @@ margin:  0 90px 0 -90px;
 
 export default () => {
     let history = useHistory()
-    const dispatch = useDispatch()
-    const getBlender = useSelector(state => state.tobacoListPage.blender);
-    const handleClick = () => {
-        dispatch(getMixes(getBlender))
 
+    const getBlender = useSelector(state => state.tobacoListPage.blender);
+    const dispatch = useDispatch()
+
+    const findMixes = async () => {
+        await dispatch(setFetchingStatus());
+        await dispatch(getMixes(getBlender));
         history.push("/mixes")
+    }
+    const handleClick = () => {
+        findMixes()
+
     }
 
     return (
