@@ -17,26 +17,30 @@ const MixesContainer = () => {
     const [mixesPerPage] = useState(8)
 
 
-    //Get current posts
+    //Get current mix
     const indexOfLastMix = currentPage * mixesPerPage
     const indexOfFirstMix = indexOfLastMix - mixesPerPage;
 
 
 
     const currentMix = !!(getFindMixes) ? getFindMixes.slice(indexOfFirstMix, indexOfLastMix) : "";
+    console.log(currentMix)
     //Change page
-    const paginate = (number, event) => {
-        SetCurrentPage(number)
+    const paginate = (number) => {
+        SetCurrentPage(currentPage + number)
     };
 
-    useEffect(() => {
 
-    }, [])
 
     return (
         isFetching ?
             !isEmpty(getFindMixes) ?
-                <Mixes totalMixes={getFindMixes} currentMix={currentMix} mixesPerPage={mixesPerPage} paginate={paginate} ></Mixes>
+                <Mixes totalMixes={getFindMixes}
+                    currentMix={currentMix}
+                    currentPage={currentPage}
+                    mixesPerPage={mixesPerPage}
+                    paginate={paginate}
+                ></Mixes>
                 : "Not found" : <MainPreloader></MainPreloader>
     )
 }

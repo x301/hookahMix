@@ -5,7 +5,6 @@ import { setDeactiveteSide, setActiveSide } from './../../component/Side/produce
 
 export default () => {
     const getStatusSide = useSelector(state => state.producersPage.activeSide);
-    console.log(getStatusSide)
     const dispatch = useDispatch();
     return (
         <StyledHamburger activeSide={getStatusSide} onClick={() => getStatusSide ? dispatch(setDeactiveteSide()) : dispatch(setActiveSide())}>

@@ -2,7 +2,7 @@ import React from "react";
 import { MixesWrapper, MixesPageWrapper, MixesItemWrapper, TobacoMix } from "./mixes.styled";
 import { Chart } from "react-google-charts";
 import Paginator from "../../common/Paginator/Paginator";
-export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate }) => {
+export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate, currentPage }) => {
 
     const findedMixes = currentMix.map(mix => {
 
@@ -14,6 +14,8 @@ export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate }) => {
             })
 
         })
+
+
         return <MixesItemWrapper>
 
             <Chart
@@ -46,7 +48,10 @@ export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate }) => {
     return (
         <MixesPageWrapper>
             <MixesWrapper>{findedMixes}</MixesWrapper>
-            <Paginator totalMixes={totalMixes.length} mixesPerPage={mixesPerPage} paginate={paginate}></Paginator>
+            <Paginator totalMixes={totalMixes.length}
+                mixesPerPage={mixesPerPage}
+                currentPage={currentPage}
+                paginate={paginate}></Paginator>
         </MixesPageWrapper>
     )
 }
