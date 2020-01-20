@@ -11,7 +11,6 @@ const initialState = {
 
 // Reducer
 export const mixesReducer = (state = initialState, action) => {
-    console.log(action.type)
     switch (action.type) {
 
         case SET_MIXES: {

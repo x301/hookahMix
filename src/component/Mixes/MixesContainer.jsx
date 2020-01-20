@@ -24,7 +24,6 @@ const MixesContainer = () => {
 
 
     const currentMix = !!(getFindMixes) ? getFindMixes.slice(indexOfFirstMix, indexOfLastMix) : "";
-    console.log(currentMix)
     //Change page
     const paginate = (number) => {
         SetCurrentPage(currentPage + number)

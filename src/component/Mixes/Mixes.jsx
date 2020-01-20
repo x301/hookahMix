@@ -5,7 +5,6 @@ import Paginator from "../../common/Paginator/Paginator";
 export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate, currentPage }) => {
 
     const findedMixes = currentMix.map((mix, i) => {
-        console.log(mix)
         let tobacoElement = [['Task', 'Hours per Day']];
         let mixTittle = [];
         Object.entries(mix).forEach(name => {

@@ -16,7 +16,16 @@ margin:  0 90px 0 -90px;
 
 `;
 
-
+const debounce = (callback, delay) => {
+    let timerId;
+    return (...args) => {
+        timerId && clearTimeout(timerId);
+        timerId = setTimeout(
+            () => callback(...args),
+            delay
+        );
+    }
+}
 
 
 export default () => {
@@ -24,14 +33,15 @@ export default () => {
 
     const getBlender = useSelector(state => state.tobacoListPage.blender);
     const dispatch = useDispatch()
-
     const findMixes = async () => {
         await dispatch(setFetchingStatus());
         await dispatch(getMixes(getBlender));
         history.push("/mixes")
     }
+
+    const fetchWithDelay = debounce(findMixes, 1000)
     const handleClick = () => {
-        findMixes()
+        fetchWithDelay()
 
     }
 
