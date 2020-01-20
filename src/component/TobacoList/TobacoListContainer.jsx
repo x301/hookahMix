@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { addInBlender, addInBlenderOnlyItems, dellItemFromBlender } from "./tobacoList-reducer";
 import { useParams } from "react-router-dom"
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
+import MainPreloader from "../../common/MainPreloader/MainPreloader";
 
 
 const TobacoListContainer = ({ dispatch }) => {
@@ -62,7 +63,7 @@ const TobacoListContainer = ({ dispatch }) => {
         tobacoList={!!(getTobacoList) && getTobacoList} addTobacoblender={addTobacoBlender}
       >
 
-      </TobacoList> : "loading"
+      </TobacoList> : <MainPreloader></MainPreloader>
   )
 }
 
