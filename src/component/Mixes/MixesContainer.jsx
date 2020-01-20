@@ -14,7 +14,7 @@ const MixesContainer = () => {
     const getFindMixes = useSelector(state => state.mixesListPage.mixes)
 
     const [currentPage, SetCurrentPage] = useState(1);
-    const [mixesPerPage] = useState(8)
+    const [mixesPerPage] = useState(6)
 
 
     //Get current mix

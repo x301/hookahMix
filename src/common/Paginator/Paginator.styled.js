@@ -6,6 +6,7 @@ justify-content: center;
 align-items: center;
 padding:1%;
 transition: all 0.15s ease;
+height: 50px;
 span {
     padding: 10px;
     font-size: 1.5rem;

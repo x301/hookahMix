@@ -4,8 +4,9 @@ import { Button } from '../../assets/common/buttons';
 export const MixesPageWrapper = styled.section`
 display: grid;
 grid-template-rows: 0fr 0fr;
-grid-row-gap: 2%;
+grid-gap: 2%;
 background-color: #ecf0f1;
+padding: 1%;
 header {
     font-size: .9rem;
     text-align: left;
@@ -26,7 +27,6 @@ display: grid;
 grid-gap: 1%;
 grid-template-columns: 1fr;
 
-padding: .2rem;
 @media ${({ theme }) => theme.device.tablet} {
     grid-template-columns: 1fr 1fr;
     
@@ -35,7 +35,6 @@ padding: .2rem;
 
 export const MixesItemWrapper = styled.div`
 background-color: ${({ theme }) => theme.primaryLight};
-padding: 1%;
 
 
 `;
