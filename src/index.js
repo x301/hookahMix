@@ -15,6 +15,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from './assets/styles/theme';
 import { PersistGate } from 'redux-persist/integration/react'
 
+
 const rrfProps = {
   firebase,
   config: rrfConf,
@@ -31,6 +32,7 @@ ReactDOM.render(
           <ThemeProvider theme={theme}>
             <React.Fragment>
               <GlobalStyle></GlobalStyle>
+
               <App state={store} />
             </React.Fragment>
           </ThemeProvider>

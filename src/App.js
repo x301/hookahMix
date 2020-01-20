@@ -1,16 +1,18 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import Header from "./component/Header/Header";
 import TobacoListContainer from "./component/TobacoList/TobacoListContainer";
 import { Route, Switch } from "react-router-dom";
 import BlenderContainer from './component/Blender/BlenderContainer';
-import MixesContainer from "./component/Mixes/MixesContainer";
 import FindMixesBtn from "./component/FindMixes/FindMixes";
 import { MainPageWrapper } from './App.styled';
 import HamburgerMenu from "./common/HamburgerMenu/HumburgerMenu"
 import BlenderMenu from "./common/BlenderMenu/BlenderMenu"
 import ProducersContainer from './component/Side/ProducersContainer';
-
+import MainPreloader from './common/MainPreloader/MainPreloader';
+const MixesContainer = React.lazy(() => import("./component/Mixes/MixesContainer"));
 const App = ({ state }) => {
+
+
   return (
     <MainPageWrapper>
       <Header />
@@ -21,7 +23,13 @@ const App = ({ state }) => {
             < TobacoListContainer dispatch={state.dispatch} />
           )}
         />
-        <Route path="/mixes"><MixesContainer></MixesContainer></Route>
+
+        <Route path="/mixes">
+          <Suspense fallback={<MainPreloader></MainPreloader>}>
+            <MixesContainer></MixesContainer>
+          </Suspense>
+
+        </Route>
       </Switch>
 
       <BlenderContainer dispatch={state.dispatch} />
