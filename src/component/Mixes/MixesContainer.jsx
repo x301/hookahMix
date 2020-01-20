@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Mixes } from './Mixes';
-import { useSelector, useDispatch } from 'react-redux';
-import { getMixes } from "../Mixes/mixes-reducer"
-import { isEmpty, isLoaded } from 'react-redux-firebase'
-import Paginator from "../../common/Paginator/Paginator";
+import { useSelector } from 'react-redux';
+
+import { isEmpty } from 'react-redux-firebase'
+import MainPreloader from "../../common/MainPreloader/MainPreloader";
+
 
 
 const MixesContainer = () => {
+
+    const isFetching = useSelector(state => state.mixesListPage.isFetching)
+
     const getFindMixes = useSelector(state => state.mixesListPage.mixes)
+
     const [currentPage, SetCurrentPage] = useState(1);
     const [mixesPerPage] = useState(8)
+
 
     //Get current posts
     const indexOfLastMix = currentPage * mixesPerPage
@@ -23,10 +29,15 @@ const MixesContainer = () => {
         SetCurrentPage(number)
     };
 
+    useEffect(() => {
+
+    }, [])
+
     return (
-        !isEmpty(getFindMixes) ?
-            isLoaded(getFindMixes) ? <Mixes totalMixes={getFindMixes} currentMix={currentMix} mixesPerPage={mixesPerPage} paginate={paginate} ></Mixes> : "Mixes not found"
-            : "Not found"
+        isFetching ?
+            !isEmpty(getFindMixes) ?
+                <Mixes totalMixes={getFindMixes} currentMix={currentMix} mixesPerPage={mixesPerPage} paginate={paginate} ></Mixes>
+                : "Not found" : <MainPreloader></MainPreloader>
     )
 }
 

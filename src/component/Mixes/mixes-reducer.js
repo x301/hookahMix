@@ -1,20 +1,34 @@
 import firebase from './../../config/fbConf';
 
-const SET_MIXES = "components/mixes/SETMIXES"
+const SET_MIXES = "components/mixes/SETMIXES";
+const SET_FETCH_STATUS = "components/mixes/SEFRTCHSTATUS";
 
 
 const initialState = {
+    isFetching: false
 
 }
 
 // Reducer
 export const mixesReducer = (state = initialState, action) => {
-
+    console.log(action.type)
     switch (action.type) {
+
         case SET_MIXES: {
             state = {
                 ...state,
-                mixes: [...action.mixes]
+                mixes: [...action.mixes],
+                isFetching: true
+
+            }
+
+            return state
+        }
+
+        case SET_FETCH_STATUS: {
+            state = {
+                ...state,
+                isFetching: false
 
             }
 
@@ -28,6 +42,7 @@ export const mixesReducer = (state = initialState, action) => {
 
 //Action Creators
 const setMixes = (mixes) => ({ type: SET_MIXES, mixes })
+export const setFetchingStatus = () => ({ type: SET_FETCH_STATUS })
 
 //Thunk
 export const getMixes = getBlender => dispatch => {

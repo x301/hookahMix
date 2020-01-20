@@ -13,7 +13,7 @@ const persistConfig = {
     key: 'root',
     storage,
     stateReconciler: hardSet,
-    whitelist: ['tobacoListPage']
+    whitelist: ['tobacoListPage', 'mixesListPage']
 }
 let rootReducers = combineReducers({
     tobacoListPage: tobacoListReducer,
