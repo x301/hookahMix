@@ -1,11 +1,24 @@
 import styled from "styled-components"
 import { Button } from '../../assets/common/buttons';
 
-export const MixesPageWrapper = styled.div`
+export const MixesPageWrapper = styled.section`
 display: grid;
 grid-template-rows: 0fr 0fr;
 grid-row-gap: 2%;
 background-color: #ecf0f1;
+header {
+    font-size: .9rem;
+    text-align: left;
+    letter-spacing: .1rem;
+    padding: 1%;
+    h1{
+        margin: 0;
+    }
+}
+strong {
+    font-size: 3rem;
+    color: red;
+}
 `;
 
 export const MixesWrapper = styled.div`

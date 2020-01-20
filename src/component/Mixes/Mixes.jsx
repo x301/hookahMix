@@ -6,14 +6,17 @@ export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate, currentP
 
     const findedMixes = currentMix.map(mix => {
 
-        let tobacoElement = [['Task', 'Hours per Day']]
+        let tobacoElement = [['Task', 'Hours per Day']];
+        let mixTittle = [];
         Object.entries(mix).forEach(name => {
 
             Object.entries(name[1]).forEach(e => {
                 tobacoElement.push([`${name[0]}: ${e[0]}`, e[1]])
+                mixTittle.push(e[0])
             })
 
         })
+
 
 
         return <MixesItemWrapper>
@@ -22,23 +25,30 @@ export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate, currentP
                 chartType="PieChart"
                 loader={<div>Loading Chart</div>}
                 data={tobacoElement}
+
                 options={{
-                    title: '',
+                    title: "",
                     // Just add this option
 
+                    titleTextStyle: {
+                        fontSize: "14",
+                        fontName: "RobotoBold",
+
+                    },
                     chartArea: {
                         left: 0,
                         width: "95%",
-                        height: "80%"
+                        height: "850%"
 
                     },
                     legend: {
-                        textStyle: { fontSize: 12 },
+                        textStyle: { fontSize: 14, fontName: "RobotoBold", },
                         position: "right",
                         alignment: "center"
 
                     }
-                }}
+                }
+                }
                 rootProps={{ 'data-testid': '2' }}
             ></Chart>
 
@@ -47,6 +57,7 @@ export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate, currentP
 
     return (
         <MixesPageWrapper>
+            <header><h1><strong>{`${totalMixes.length}`}</strong>{`: найденных миксов`}</h1></header>
             <MixesWrapper>{findedMixes}</MixesWrapper>
             <Paginator totalMixes={totalMixes.length}
                 mixesPerPage={mixesPerPage}
