@@ -38,7 +38,7 @@ export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate, currentP
 
                     },
                     legend: {
-                        textStyle: { fontSize: 14, fontName: "RobotoBold", },
+                        textStyle: { fontSize: 16, fontName: "RobotoBold", },
                         position: "right",
                         alignment: "center"
 
