@@ -36,8 +36,8 @@ export default () => {
     const dispatch = useDispatch()
     const findMixes = async () => {
         await dispatch(setFetchingStatus());
-        await dispatch(getMixes(getBlender));
         history.push("/mixes")
+        await dispatch(getMixes(getBlender));
     }
 
     const fetchWithDelay = debounce(findMixes, 1000)
