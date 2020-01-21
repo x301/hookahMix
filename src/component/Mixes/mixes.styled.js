@@ -25,7 +25,6 @@ strong {
 export const MixesWrapper = styled.div`
 display: grid;
 grid-template-columns: 1fr;
-grid-row-gap: 5px;
 
 @media ${({ theme }) => theme.device.tablet} {
     grid-template-columns: 1fr 1fr;
@@ -35,7 +34,7 @@ grid-row-gap: 5px;
 
 export const MixesItemWrapper = styled.div`
 background-color: ${({ theme }) => theme.primaryLight};
-
+padding: 1%;
 
 `;
 
