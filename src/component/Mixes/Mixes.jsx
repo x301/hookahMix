@@ -67,7 +67,7 @@ export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate, currentP
 
 Mixes.propTypes = {
     totalMixes: PropTypes.number,
-    currentMixr: PropTypes.array,
+    currentMix: PropTypes.array,
     mixesPerPage: PropTypes.number,
     paginate: PropTypes.func,
     currentPage: PropTypes.number

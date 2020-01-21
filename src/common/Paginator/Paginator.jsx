@@ -1,5 +1,6 @@
 import React from 'react'
 import { PaginatorPages, ArrowRight, ArrowLeft } from './Paginator.styled';
+import PropTypes from 'prop-types';
 
 const Paginator = ({ totalMixes, mixesPerPage, paginate, currentPage }) => {
     const pageNum = [];
@@ -38,4 +39,12 @@ const Paginator = ({ totalMixes, mixesPerPage, paginate, currentPage }) => {
         </PaginatorPages>
     )
 }
+
+Paginator.propTypes = {
+    totalMixes: PropType.number,
+    mixesPerPage: PropTypes.number,
+    paginate: PropTypes.func,
+    currentPage: PropTypes.number
+}
+
 export default Paginator
