@@ -41,7 +41,7 @@ const Paginator = ({ totalMixes, mixesPerPage, paginate, currentPage }) => {
 }
 
 Paginator.propTypes = {
-    totalMixes: PropTypes.number,
+    totalMixes: PropTypes.array,
     mixesPerPage: PropTypes.number,
     paginate: PropTypes.func,
     currentPage: PropTypes.number
