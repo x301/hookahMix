@@ -1,10 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { ProducesrWrapper } from './Produsers.styled';
+import PropTypes from 'prop-types';
 
-
-export default ({ activeSide }) => {
-
+const Producers = ({ activeSide }) => {
   return (
     <ProducesrWrapper activeSide={activeSide}>
       <nav>
@@ -52,4 +51,9 @@ export default ({ activeSide }) => {
   );
 };
 
+Producers.propTypes = {
+  activeSide: PropTypes.bool
+}
+
+export default Producers;
 

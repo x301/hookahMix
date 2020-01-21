@@ -55,9 +55,9 @@ export const getMixes = getBlender => dispatch => {
         })
         .catch(function (error) {
             // Getting the Error details.
-            var code = error.code;
-            var message = error.message;
-            var details = error.details;
+            let code = error.code;
+            let message = error.message;
+            let details = error.details;
             // ...
         });
 }
