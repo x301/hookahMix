@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Mixes } from './Mixes';
 import { useSelector } from 'react-redux';
-
 import { isEmpty } from 'react-redux-firebase'
 import MainPreloader from "../../common/MainPreloader/MainPreloader";
-
 
 
 const MixesContainer = () => {
@@ -28,8 +26,6 @@ const MixesContainer = () => {
     const paginate = (number) => {
         SetCurrentPage(currentPage + number)
     };
-
-
 
     return (
         isFetching ?
