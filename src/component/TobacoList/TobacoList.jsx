@@ -3,11 +3,10 @@ import styled from "styled-components"
 import { TobacoListWrapper, TobaccoElementWrapper, TobacoElements } from "./tobacoList.styled"
 import { TitleTobaccoName } from './../../assets/common/tittle';
 import { TextELement } from './../../assets/common/texts';
+import PropTypes from 'prop-types';
 
 
-
-
-export default ({ tobacoList, addTobacoblender }) => {
+const TobacoList = ({ tobacoList, addTobacoblender }) => {
   return (
     <TobacoListWrapper >
       <TitleTobaccoName>{tobacoList.name}</TitleTobaccoName>
@@ -20,3 +19,9 @@ export default ({ tobacoList, addTobacoblender }) => {
   );
 };
 
+export default TobacoList;
+
+TobacoList.propTypes = {
+  tobacoList: PropTypes.array.isRequired,
+  addTobacoblender: PropTypes.func
+}
