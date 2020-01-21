@@ -22,6 +22,6 @@ const TobacoList = ({ tobacoList, addTobacoblender }) => {
 export default TobacoList;
 
 TobacoList.propTypes = {
-  tobacoList: PropTypes.array.isRequired,
+  tobacoList: PropTypes.object.isRequired,
   addTobacoblender: PropTypes.func
 }
