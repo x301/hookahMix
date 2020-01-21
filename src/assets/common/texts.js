@@ -5,8 +5,9 @@ font-family: "RobotoRegular";
 font-size: 1.4em;
 padding: .1em;
 color: #2c3e50;
-font-weight: 200;
+font-weight: 500;
 margin: 0;
-text-align: center
+text-align: center;
+letter-spacing: .1rem;
 `;
 

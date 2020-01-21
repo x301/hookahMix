@@ -3,6 +3,8 @@ import styled from "styled-components"
 export const MainPageWrapper = styled.div`
   min-height: 100vh;
   background-color: white;
+  overflow-x: hidden;
+  max-width: 100vw;
 
   @media ${({ theme }) => theme.device.tablet} {
   display: grid;

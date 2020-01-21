@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import Header from "./component/Header/Header";
 import TobacoListContainer from "./component/TobacoList/TobacoListContainer";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import BlenderContainer from './component/Blender/BlenderContainer';
 import FindMixesBtn from "./component/FindMixes/FindMixes";
 import { MainPageWrapper } from './App.styled';
@@ -16,9 +16,11 @@ import Footer from './component/Footer/Footer';
 const App = ({ state }) => {
 
   return (
-    <MainPageWrapper>
-      <Header />
-      <Switch>
+    <Switch>
+
+      <MainPageWrapper>
+        <Header />
+        <Redirect from='/' to='/tobacco/Adalya' />
         <Route
           path="/tobacco/:id"
           render={(props) => (
@@ -30,15 +32,16 @@ const App = ({ state }) => {
           <MixesContainer></MixesContainer>
 
         </Route>
-      </Switch>
 
-      <BlenderContainer dispatch={state.dispatch} />
-      <HamburgerMenu ></HamburgerMenu>
-      <ProducersContainer />
-      <FindMixesBtn></FindMixesBtn>
-      <BlenderMenu ></BlenderMenu>
-      <Footer></Footer>
-    </MainPageWrapper>
+
+        <BlenderContainer dispatch={state.dispatch} />
+        <HamburgerMenu ></HamburgerMenu>
+        <ProducersContainer />
+        <FindMixesBtn></FindMixesBtn>
+        <BlenderMenu ></BlenderMenu>
+        <Footer></Footer>
+      </MainPageWrapper >
+    </Switch>
 
 
 
