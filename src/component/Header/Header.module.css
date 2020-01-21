@@ -1,0 +1,6 @@
+.wrapper {
+    display: grid;
+    grid-area: header;
+    background-color: #40739e;
+    text-align: center
+}
