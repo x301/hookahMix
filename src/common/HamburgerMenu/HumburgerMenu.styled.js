@@ -3,7 +3,7 @@ import { theme } from './../../assets/styles/theme';
 
 export const StyledHamburger = styled.button`
   position: absolute;
-  top: 1%;
+  top: 3%;
   left: 1.3rem;
   display: flex;
   flex-direction: column;

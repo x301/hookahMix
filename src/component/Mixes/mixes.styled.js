@@ -3,10 +3,10 @@ import { Button } from '../../assets/common/buttons';
 
 export const MixesPageWrapper = styled.section`
 display: grid;
-grid-template-rows: 0fr 0fr;
-grid-gap: 2%;
+grid-template-rows: 0fr 0fr 0fr;
 background-color: #ecf0f1;
 padding: 1%;
+min-height: 100vh;
 header {
     font-size: .9rem;
     text-align: left;
@@ -24,8 +24,8 @@ strong {
 
 export const MixesWrapper = styled.div`
 display: grid;
-grid-gap: 1%;
 grid-template-columns: 1fr;
+grid-row-gap: 5px;
 
 @media ${({ theme }) => theme.device.tablet} {
     grid-template-columns: 1fr 1fr;

@@ -36,7 +36,7 @@ export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate, currentP
                     chartArea: {
                         left: 0,
                         width: "95%",
-                        height: "100%"
+                        height: "90%"
 
                     },
                     legend: {
