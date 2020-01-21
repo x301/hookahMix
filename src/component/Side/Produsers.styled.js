@@ -35,6 +35,6 @@ export const ProducesrWrapper = styled.div`
     transform: translateX(0);
     position: relative;
     max-width: 20vw;
-    
+    padding-top: 2.4rem;
   }
 `;
