@@ -9,7 +9,7 @@ export const ProducesrWrapper = styled.div`
   width: 13rem;
   text-align: left;
   padding: .5rem;
-  padding-top: 2.4rem;
+  padding-top: 3.5rem;
   position: absolute;
   top: 0;
   left: 0;
