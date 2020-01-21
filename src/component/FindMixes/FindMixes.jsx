@@ -11,8 +11,9 @@ position: fixed;
 width: 180px;
 height: 50px;
 left: 50vw;
-bottom: 10px;
+bottom: 3px;
 margin:  0 90px 0 -90px;
+cursor: pointer;
 
 `;
 

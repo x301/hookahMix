@@ -6,7 +6,6 @@ export const ProducesrWrapper = styled.div`
   flex-direction: column;
   justify-content: start;
   background: ${({ theme }) => theme.primaryLight};
-  height: 100vh;
   width: 13rem;
   text-align: left;
   padding: .5rem;

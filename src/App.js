@@ -9,6 +9,7 @@ import HamburgerMenu from "./common/HamburgerMenu/HumburgerMenu"
 import BlenderMenu from "./common/BlenderMenu/BlenderMenu"
 import ProducersContainer from './component/Side/ProducersContainer';
 import MixesContainer from './component/Mixes/MixesContainer';
+import Footer from './component/Footer/Footer';
 
 
 
@@ -36,7 +37,9 @@ const App = ({ state }) => {
       <ProducersContainer />
       <FindMixesBtn></FindMixesBtn>
       <BlenderMenu ></BlenderMenu>
+      <Footer></Footer>
     </MainPageWrapper>
+
 
 
   );
