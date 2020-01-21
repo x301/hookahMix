@@ -25,7 +25,7 @@ export const BLenderWrapper = styled.div`
   @media ${({ theme }) => theme.device.tablet} {
     transform: translateY(0);
     position: relative;
-    width: 20vw;
+    width: 15vw;
   
 }
 `;
