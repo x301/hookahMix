@@ -26,7 +26,7 @@ display: inline-block;
 padding: 1%;
 margin-left: 4%;
 margin-bottom: 4%;
-max-width: 190px;
+max-width: 270px;
 cursor: pointer;
 border: 1px solid #bdc3c7;
 border-radius: 7px;
