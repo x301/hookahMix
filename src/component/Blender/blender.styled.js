@@ -31,6 +31,7 @@ export const BLenderWrapper = styled.div`
 `;
 
 export const BLenderItems = styled.span`
+    font-family: "RobotoRegular" "OpenSansRegular";
     display: inline-block;
     height: 1.2em;
     padding: 0 .5em;

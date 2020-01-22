@@ -3,6 +3,7 @@ import { BLenderWrapper, BlenderCounterWrapper, BLenderItems } from "./blender.s
 import { CleanBlenderBtn } from "../../assets/common/buttons";
 import cleanActiveBtn from "../../assets/img/clean-icon-red.png";
 import cleanBtn from "../../assets/img/clean-icon-black.png";
+import { TextELement } from './../../assets/common/texts';
 
 
 export default ({ blender, dellItem, activeMenu, getBlenderCount, dellAllitems }) => {
@@ -20,6 +21,7 @@ export default ({ blender, dellItem, activeMenu, getBlenderCount, dellAllitems }
       <span onClick={dellAllitems}><img src={blenderItems.length ? cleanActiveBtn : cleanBtn}></img></span>
       <span><p>{getBlenderCount ? `В миксере ${getBlenderCount} вкусов` : `В миксере нет вкусов`}</p></span>
     </BlenderCounterWrapper>
+    <TextELement></TextELement>
     {blenderItems}
   </BLenderWrapper>;
 };
