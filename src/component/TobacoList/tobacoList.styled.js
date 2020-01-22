@@ -6,6 +6,7 @@ export const TobacoListWrapper = styled.div`
   grid-template-areas: "Line-Name " "Line-Content ";
   background-color: ${({ theme }) => theme.primaryGrey};
   grid-template-rows: 0fr 0fr;
+  min-height: 83vh;
   
 
 `;
