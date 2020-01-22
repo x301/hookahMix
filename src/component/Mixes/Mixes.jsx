@@ -30,7 +30,7 @@ export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate, currentP
 
                     titleTextStyle: {
                         fontSize: "14",
-                        fontName: "RobotoBold",
+                        fontName: "RobotoBold OpenSansBold",
 
                     },
                     chartArea: {

@@ -11,21 +11,21 @@ export const TobacoListWrapper = styled.div`
 `;
 export const TobacoElements = styled.div`
     grid-area: Line-Content;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 130px));
-    grid-gap: 15px;
-    justify-content: center;
-    
+    display: inline-block;
+   
 `;
 export const TobacoProducerName = styled.div`
-  font-family: "RobotoBold";
+  font-family: "RobotoBold" "OpenSansBold";
   grid-area: Line-Name;
   font-size: 18pt;
 `;
 
 export const TobaccoElementWrapper = styled.div`
- display: grid;
- align-items: center;
+display: inline-block;
+padding: 1%;
+margin-left: 4%;
+margin-bottom: 4%;
+max-width: 190px;
 &:hover {
     border-color: ${({ theme }) => theme.primaryHover}; 
   }

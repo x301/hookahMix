@@ -4,6 +4,7 @@ export const MainPageWrapper = styled.div`
   min-height: 100vh;
   background-color: white;
   overflow-x: hidden;
+  overflow-y: hidden;
   max-width: 100vw;
 
   @media ${({ theme }) => theme.device.tablet} {

@@ -32,4 +32,25 @@ span {
     font-style: normal;
   };
 
+  @font-face {
+    font-family: "OpenSansBold";
+    src: url("./fonts/OpenSans-Bold.ttf");
+    font-weight: normal;
+    font-style: normal;
+  };
+
+  @font-face {
+    font-family: "OpenSansLight";
+    src: url("./fonts/OpenSans-Light.ttf");
+    font-weight: normal;
+    font-style: normal;
+  };
+
+  @font-face {
+    font-family: "OpenSansoRegular";
+    src: url("./fonts/OpenSans-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+  };
+
 `
