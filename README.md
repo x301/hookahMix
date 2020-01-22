@@ -1,8 +1,8 @@
 ## HookahBlender
-One Paragraph of project description goes here
+App for search mixes for Hookah
 
 ## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -37,6 +37,6 @@ Run start `yarn test`
 
 
 ## Authors
-Sergey shelyapin - Initial work - PurpleBooth
+Sergey Shelyapin - Initial work 
 
 
