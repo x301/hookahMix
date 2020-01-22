@@ -5,7 +5,7 @@ const FooterWrapper = styled.section`
 display: grid;
 grid-area: footer;
 width: 100vw;
-height: 7vh;
+height: 8vh;
 background: #40739e;
 `
 
