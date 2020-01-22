@@ -26,11 +26,17 @@ padding: 1%;
 margin-left: 4%;
 margin-bottom: 4%;
 max-width: 190px;
+cursor: pointer;
+border: 1px solid #bdc3c7;
+border-radius: 7px;
 &:hover {
     border-color: ${({ theme }) => theme.primaryHover}; 
   }
-  cursor: pointer;
-  border: 1px solid #bdc3c7;
-  border-radius: 7px
+  
+
+  @media ${({ theme }) => theme.device.tablet} {
+  margin-left: 1em;
+  margin-bottom: 1em;
+  }
 
 `
