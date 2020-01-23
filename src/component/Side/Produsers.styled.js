@@ -21,7 +21,7 @@ export const ProducesrWrapper = styled.div`
       a {
           color: ${({ theme }) => theme.secondaryDark} ;
           text-decoration: none;
-          font-size: 1.4rem;
+          font-size: 1.6rem;
           padding-left: .5rem;
           font-family: "RobotoBold", "OpenSansBold";
           letter-spacing: .2rem;
