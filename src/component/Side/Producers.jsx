@@ -3,50 +3,15 @@ import { NavLink } from "react-router-dom";
 import { ProducesrWrapper } from './Produsers.styled';
 import PropTypes from 'prop-types';
 
+const producers = ["Adalya", "Afzal", "Alfakher", "Daily Hookah", "DarkSide", "Di Gusto", "Duft",
+  "Element", "Fumari", "Just Smoke", "Matt Pear", "MustHave", "Nakhla", "New Yorker", "Sarkozy", "Satyr", "Serbetli",
+  "Spectrum", "Tangier's", "WTO", "Северный"]
+
 const Producers = ({ activeSide }) => {
+  const TobacoProducers = producers.map((elem) => <nav><NavLink to={`/tobacco/${elem.split(' ').join('')}`}>{elem}</NavLink></nav>)
   return (
     <ProducesrWrapper activeSide={activeSide}>
-      <nav>
-        <NavLink to="/tobacco/Adalya">Adalya</NavLink>
-      </nav>
-
-      <nav>
-        <NavLink to="/tobacco/Afzal">Afzal</NavLink>
-      </nav>
-
-      <nav>
-        <NavLink to="/tobacco/Alfakher">Alfakher</NavLink>
-      </nav>
-
-      <nav>
-        <NavLink to="/tobacco/DailyHookah">Daily Hookah</NavLink>
-      </nav>
-
-      <nav>
-        <NavLink to="/tobacco/DarkSide">DarkSide</NavLink>
-      </nav>
-
-      <nav>
-        <NavLink to="/tobacco/DiGusto">Di Gusto</NavLink>
-      </nav>
-
-      <nav>
-        <NavLink to="/tobacco/Duft">Duft</NavLink>
-      </nav>
-
-      <nav>
-        <NavLink to="/tobacco/Element">Element</NavLink>
-      </nav>
-
-      <nav>
-        <NavLink to="/tobacco/Fumari">Fumari</NavLink>
-      </nav>
-
-      <nav>
-        <NavLink to="/tobacco/JustSmoke">Just Smoke</NavLink>
-      </nav>
-
-
+      {TobacoProducers}
     </ProducesrWrapper>
   );
 };
