@@ -4,8 +4,6 @@ import Producers from "./Producers";
 
 
 
-
-
 const ProducersContainer = () => {
   const getStatusSide = useSelector(state => state.producersPage.activeSide)
   return (

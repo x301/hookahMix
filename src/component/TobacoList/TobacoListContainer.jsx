@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TobacoList from "./TobacoList";
 import { useSelector } from "react-redux";
 import { addInBlender, addInBlenderOnlyItems, dellItemFromBlender } from "./tobacoList-reducer";
 import { useParams } from "react-router-dom"
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
 import MainPreloader from "../../common/MainPreloader/MainPreloader";
-
+import { setDeactiveteSide } from './../../component/Side/producers-reducer';
+import { setDeactiveteBlender } from '../../component/TobacoList/tobacoList-reducer';
 
 const TobacoListContainer = ({ dispatch }) => {
 
@@ -16,6 +17,8 @@ const TobacoListContainer = ({ dispatch }) => {
 
   }))
   useFirestoreConnect(() => {
+    dispatch(setDeactiveteSide());
+    dispatch(setDeactiveteBlender());
     if (!!(getTobacoList)) {
 
       if (!(getTobacoList.name === tobacoName)) {
@@ -26,6 +29,9 @@ const TobacoListContainer = ({ dispatch }) => {
     }
   }, [tobacoName])
 
+  useEffect(() => {
+
+  }, [tobacoName])
 
   const getBlender = useSelector((state) => state.tobacoListPage.blender)
 

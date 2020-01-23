@@ -9,7 +9,6 @@ const producers = ["Adalya", "Afzal", "Alfakher", "DailyHookah", "DarkSide", "Di
 
 const Producers = ({ activeSide }) => {
   const TobacoProducers = producers.map((elem) => <nav><NavLink to={`/tobacco/${elem}`}>{elem}</NavLink></nav>)
-  console.log(TobacoProducers)
   return (
     <ProducesrWrapper activeSide={activeSide}>
       {TobacoProducers}
