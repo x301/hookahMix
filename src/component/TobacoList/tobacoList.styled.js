@@ -23,7 +23,7 @@ export const TobacoProducerName = styled.div`
 
 export const TobaccoElementWrapper = styled.div`
 display: inline-block;
-padding: 3px;
+padding: 1%;
 margin-left: 4%;
 margin-bottom: 4%;
 max-width: 370px;

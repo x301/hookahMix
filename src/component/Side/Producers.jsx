@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 
 const producers = ["Adalya", "Afzal", "Alfakher", "DailyHookah", "DarkSide", "DiGusto", "Duft",
   "Element", "Fumari", "JustSmoke", "MattPear", "MustHave", "Nakhla", "NewYorker", "Sarkozy", "Satyr", "Serbetli",
-  "Spectrum", "Tangier's", "WTO", "Северный"]
+  "Spectrum", "Tangier' s", "WTO", "Северный"]
 
 const Producers = ({ activeSide }) => {
-  const TobacoProducers = producers.map((elem, i) => <nav key={i}><NavLink to={`/tobacco/${elem}`}>{elem}</NavLink></nav>)
+  const TobacoProducers = producers.map((elem) => <nav><NavLink to={`/tobacco/${elem}`}>{elem}</NavLink></nav>)
   return (
     <ProducesrWrapper activeSide={activeSide}>
       {TobacoProducers}
