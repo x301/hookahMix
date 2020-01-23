@@ -6,7 +6,7 @@ export const ProducesrWrapper = styled.div`
   flex-direction: column;
   justify-content: start;
   background: ${({ theme }) => theme.primaryLight};
-  width: 13rem;
+  width: 15rem;
   text-align: left;
   padding-top: 3.6rem;
   position: absolute;
@@ -23,6 +23,7 @@ export const ProducesrWrapper = styled.div`
           text-decoration: none;
           font-size: 1.4rem;
           padding-left: .5rem;
+          text-transform: uppercase;
           font-family: "RobotoBold", "OpenSansBold";
           letter-spacing: .2rem;
           transition: color 0.3s linear;

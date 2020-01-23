@@ -3,12 +3,12 @@ import { NavLink } from "react-router-dom";
 import { ProducesrWrapper } from './Produsers.styled';
 import PropTypes from 'prop-types';
 
-const producers = ["Adalya", "Afzal", "Alfakher", "DailyHookah", "DarkSide", "DiGusto", "Duft",
-  "Element", "Fumari", "JustSmoke", "MattPear", "MustHave", "Nakhla", "NewYorker", "Sarkozy", "Satyr", "Serbetli",
-  "Spectrum", "Tangier' s", "WTO", "Северный"]
+const producers = ["Adalya", "Afzal", "Alfakher", "Daily Hookah", "DarkSide", "Di Gusto", "Duft",
+  "Element", "Fumari", "Just Smoke", "Matt Pear", "MustHave", "Nakhla", "New Yorker", "Sarkozy", "Satyr", "Serbetli",
+  "Spectrum", "Tangier's", "WTO", "Северный"]
 
 const Producers = ({ activeSide }) => {
-  const TobacoProducers = producers.map((elem) => <nav><NavLink to={`/tobacco/${elem}`}>{elem}</NavLink></nav>)
+  const TobacoProducers = producers.map((elem) => <nav><NavLink to={`/tobacco/${elem.split(' ').join('')}`}>{elem}</NavLink></nav>)
   return (
     <ProducesrWrapper activeSide={activeSide}>
       {TobacoProducers}
