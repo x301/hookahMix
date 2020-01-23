@@ -8,7 +8,6 @@ export const ProducesrWrapper = styled.div`
   background: ${({ theme }) => theme.primaryLight};
   width: 13rem;
   text-align: left;
-  padding: .5rem;
   padding-top: 3.6rem;
   position: absolute;
   top: 0;
@@ -18,12 +17,13 @@ export const ProducesrWrapper = styled.div`
 
   nav {
       border-bottom: 1px solid ${({ theme }) => theme.secondaryDark};
+      padding:3% 0 3% 0;
       a {
           color: ${({ theme }) => theme.secondaryDark} ;
           text-decoration: none;
           font-size: 1.4rem;
-          text-transform: uppercase;
-          font-family: "RobotoRegular", "OpenSansRegular";
+          padding-left: .5rem;
+          font-family: "RobotoBold", "OpenSansBold";
           letter-spacing: .2rem;
           transition: color 0.3s linear;
       }
