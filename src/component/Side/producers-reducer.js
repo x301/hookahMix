@@ -6,7 +6,6 @@ const initialState = {
 }
 
 export const producersReducer = (state = initialState, action) => {
-    console.log(action.type)
     switch (action.type) {
         case SET_ACTIVE_SIDE:
             return state = {
