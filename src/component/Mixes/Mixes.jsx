@@ -21,7 +21,6 @@ export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate, currentP
 
             <Chart
                 chartType="PieChart"
-                loader={<div>Loading Chart</div>}
                 data={tobacoElement}
 
                 options={{
