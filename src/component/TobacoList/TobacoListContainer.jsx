@@ -40,7 +40,6 @@ const TobacoListContainer = ({ dispatch }) => {
     const currentTobaco = event.currentTarget.textContent
     if (getBlender[getTobacoList.name]) {
       const findTobaco = getBlender[getTobacoList.name].tobacoItems.indexOf(currentTobaco)
-      console.log(findTobaco)
 
       if (findTobaco === -1) {
         dispatch(addInBlenderOnlyItems({

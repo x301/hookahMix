@@ -44,7 +44,6 @@ export const tobacoListReducer = (state = initialState, action) => {
             return stateCopy
 
         case DEL_TOBACO_ITEMS_FROM_BLENDER:
-            console.log(action.items)
             if (stateCopy.blender[action.items.name].tobacoItems.length > 1) {
 
                 stateCopy.blender[action.items.name].tobacoItems.splice(action.items.tobacoItems, 1)

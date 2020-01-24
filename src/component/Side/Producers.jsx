@@ -8,7 +8,7 @@ const producers = ["Adalya", "Afzal", "Alfakher", "Daily Hookah", "DarkSide", "D
   "Spectrum", "Tangier's", "WTO", "Северный"]
 
 const Producers = ({ activeSide }) => {
-  const TobacoProducers = producers.map((elem) => <nav><NavLink to={`/tobacco/${elem.split(' ').join('')}`}>{elem}</NavLink></nav>)
+  const TobacoProducers = producers.map((elem, i) => <nav key={i}><NavLink to={`/tobacco/${elem.split(' ').join('')}`}>{elem}</NavLink></nav>)
   return (
     <ProducesrWrapper activeSide={activeSide}>
       {TobacoProducers}
