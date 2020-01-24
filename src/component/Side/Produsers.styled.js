@@ -25,7 +25,7 @@ export const ProducesrWrapper = styled.div`
           padding-left: .5rem;
           text-transform: uppercase;
           font-family: "RobotoBold", "OpenSansBold";
-          letter-spacing: .2rem;
+          letter-spacing: .1rem;
           transition: color 0.3s linear;
       }
 

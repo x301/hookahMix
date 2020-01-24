@@ -22,7 +22,9 @@ export const tobacoListReducer = (state = initialState, action) => {
     let stateCopy = {
         ...state,
         blender: { ...state.blender }
+
     }
+
     switch (action.type) {
 
         case ADD_TOBACO_AND_ITEMS_IN_BLENDER:
@@ -42,12 +44,14 @@ export const tobacoListReducer = (state = initialState, action) => {
             return stateCopy
 
         case DEL_TOBACO_ITEMS_FROM_BLENDER:
-
+            console.log(action.items)
             if (stateCopy.blender[action.items.name].tobacoItems.length > 1) {
-                stateCopy.blender[action.items.name].tobacoItems.splice(action.items.tobacoIndex, 1)
+
+                stateCopy.blender[action.items.name].tobacoItems.splice(action.items.tobacoItems, 1)
 
             } else {
-                stateCopy.blender[action.items.name].tobacoItems.splice(action.items.tobacoIndex, 1)
+
+                stateCopy.blender[action.items.name].tobacoItems.splice(action.items.tobacoItems, 1)
                 delete stateCopy.blender[action.items.name]
             }
             stateCopy.blenderCount && stateCopy.blenderCount--;
