@@ -14,7 +14,7 @@ const TobacoListContainer = ({ dispatch }) => {
 
   }))
   useFirestoreConnect(() => {
-    //dispatch(setDeactiveteSide());
+    dispatch(setDeactiveteSide());
     if (!!(getTobacoList)) {
 
       if (!(getTobacoList.name === tobacoName)) {
