@@ -6,19 +6,15 @@ import { useParams } from "react-router-dom"
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
 import MainPreloader from "../../common/MainPreloader/MainPreloader";
 import { setDeactiveteSide } from './../../component/Side/producers-reducer';
-import { setDeactiveteBlender } from '../../component/TobacoList/tobacoList-reducer';
 
 const TobacoListContainer = ({ dispatch }) => {
-
   const tobacoName = useParams().id
-
   const getTobacoList = useSelector((({ firestore }) => {
     return firestore.data.HookahProducers && firestore.data.HookahProducers[tobacoName]
 
   }))
   useFirestoreConnect(() => {
-    dispatch(setDeactiveteSide());
-    dispatch(setDeactiveteBlender());
+    //dispatch(setDeactiveteSide());
     if (!!(getTobacoList)) {
 
       if (!(getTobacoList.name === tobacoName)) {
