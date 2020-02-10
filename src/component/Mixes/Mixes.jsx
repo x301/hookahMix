@@ -3,9 +3,11 @@ import { MixesWrapper, MixesPageWrapper, MixesItemWrapper, TobacoMix } from "./m
 import { Chart } from "react-google-charts";
 import Paginator from "../../common/Paginator/Paginator";
 import PropTypes from 'prop-types';
+import changeStr from "../../assets/utils/changeStr"
+
 
 export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate, currentPage }) => {
-
+    const strVariable = ["найденный микс", "найденных миксов"]
     const findedMixes = currentMix.map((mix, i) => {
         let tobacoElement = [['Task', 'Hours per Day']];
         let mixTittle = [];
@@ -54,7 +56,7 @@ export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate, currentP
 
     return (
         <MixesPageWrapper>
-            <header><h1><strong>{`${totalMixes.length}`}</strong>{`: найденных миксов`}</h1></header>
+            <header><h1><strong>{`${totalMixes.length}`}</strong>{`: ${changeStr(strVariable, totalMixes.length)}`}</h1></header>
             <MixesWrapper>{findedMixes}</MixesWrapper>
             <Paginator totalMixes={totalMixes.length}
                 mixesPerPage={mixesPerPage}
