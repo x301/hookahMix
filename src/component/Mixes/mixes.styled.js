@@ -34,23 +34,21 @@ grid-template-columns: 1fr;
 
 export const MixesItemWrapper = styled.div`
 background-color: ${({ theme }) => theme.primaryLight};
-padding: 1%;
+padding: 2%;
+height: 13vh;
+margin: 1vh 1vw 0 1vw ;
+border: 1px solid black;
+font-size: 1.3rem;
+cursor: pointer;
 
 `;
 
 
 export const TobacoMix = styled.div`
+padding: 1%;
 
-
-div {
-    display:inline-block;
-    margin-left: .5rem;
-    margin-bottom: .2rem;
-
-    :first-child {
-        margin-left: .1rem
-    }
+span {
+    font-size: .88em;
+   padding-left: 1vw 
 }
-
-
 `;

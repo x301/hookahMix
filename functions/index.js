@@ -3,7 +3,7 @@ const admin = require('firebase-admin');
 admin.initializeApp();
 
 exports.getFindMixes = functions.https.onCall(async (data, context) => {
-    const getBlender = data;
+    const getBlender = data.concat();
     const findMixes = []
     await admin.firestore().collection('HokahMixes').get().then(snapshot => {
 

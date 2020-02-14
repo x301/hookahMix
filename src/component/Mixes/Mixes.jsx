@@ -7,19 +7,22 @@ import PropTypes from 'prop-types';
 export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate, currentPage }) => {
 
     const findedMixes = currentMix.map((mix, i) => {
-        let tobacoElement = [['Task', 'Hours per Day']];
-        let mixTittle = [];
-        Object.entries(mix).forEach(name => {
 
-            Object.entries(name[1]).forEach(e => {
-                tobacoElement.push([`${name[0]}: ${e[0]}`, e[1]])
-                mixTittle.push(e[0])
+        let tobacoElement = [];
+        let mixTittle = [];
+
+        const miElement = Object.entries(mix).map((name, i) => {
+            const ElementInTobacoMix = Object.entries(name[1]).map((e, i) => {
+                return <span key={i}>{`${e[0]}, `}</span>
+                // tobacoElement.push(<div>{`${name[0]}: ${e[0]}`, e[1]}</div>)
+                // mixTittle.push(e[0])
             })
+            return <TobacoMix key={i}>{`${name[0]}: `}{ElementInTobacoMix}</TobacoMix>
 
         })
         return <MixesItemWrapper key={i}>
-
-            <Chart
+            {miElement}
+            {/* /* <Chart ['Task', 'Hours per Day']
                 chartType="PieChart"
                 data={tobacoElement}
 
@@ -47,7 +50,7 @@ export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate, currentP
                 }
                 }
                 rootProps={{ 'data-testid': '2' }}
-            ></Chart>
+            ></Chart> */ }
 
         </MixesItemWrapper>
     })
