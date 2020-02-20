@@ -49,6 +49,7 @@ padding: 1%;
 
 span {
     font-size: .88em;
-   padding-left: 1vw 
+    padding-top: 1vh;
+    padding-left: 1vw; 
 }
 `;
