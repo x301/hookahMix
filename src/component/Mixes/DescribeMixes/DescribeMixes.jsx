@@ -3,40 +3,47 @@ import { Chart } from "react-google-charts";
 import { useSelector } from 'react-redux';
 const DescibeMixes = ({ handleCloseFullMix }) => {
     const mix = useSelector(state => state.describeMixPage);
-    console.log(mix);
+    const colors=["red","blue","green","orange","yellow","black"];
     return (
-        <div onClick={handleCloseFullMix}>
-            {/* /* <Chart ['Task', 'Hours per Day']
-                chartType="PieChart"
-                data={tobacoElement}
+        <section>
+            <div>
+                {mix.mixName.map(e=> {
+                    return <div>{e}</div>
+                })}
+            </div>
+            <Chart
+    chartType="PieChart"
+    data={mix.tobaccoMix}
+    options={{
+        title: "",
+        // Just add this option
+        colors: colors,
+        titleTextStyle: {
+            fontSize: "14",
+            fontName: "RobotoBold OpenSansBold",
 
-                options={{
-                    title: "",
-                    // Just add this option
+        },
+        chartArea: {
+            left: 0,
+            width: "95%",
+            height: "90%"
 
-                    titleTextStyle: {
-                        fontSize: "14",
-                        fontName: "RobotoBold OpenSansBold",
+        },
+        legend: {
+            textStyle: {fontSize: 16, fontName: "RobotoBold",},
+            position: "none",
+            alignment: "center"
 
-                    },
-                    chartArea: {
-                        left: 0,
-                        width: "95%",
-                        height: "90%"
+        }
+    }
+    }
+    rootProps={{'data-testid': '2'}}
+    />
+            <div>
 
-                    },
-                    legend: {
-                        textStyle: { fontSize: 16, fontName: "RobotoBold", },
-                        position: "right",
-                        alignment: "center"
-
-                    }
-                }
-                }
-                rootProps={{ 'data-testid': '2' }}
-            ></Chart> */ }
-        </div>
+            </div>
+        </section>
     )
-}
+};
 
 export default DescibeMixes

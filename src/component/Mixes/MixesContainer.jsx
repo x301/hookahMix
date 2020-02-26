@@ -6,16 +6,19 @@ import MainPreloader from "../../common/MainPreloader/MainPreloader";
 import { setDeactiveteSide } from './../../component/Side/producers-reducer';
 import { setDeactiveteBlender } from '../../component/TobacoList/tobacoList-reducer';
 import { setMix } from "./DescribeMixes/describe-reducer"
+
+
+
 const MixesContainer = () => {
     const dispatch = useDispatch();
-    const isFetching = useSelector(state => state.mixesListPage.isFetching)
-    const getFindMixes = useSelector(state => state.mixesListPage.mixes)
+    const isFetching = useSelector(state => state.mixesListPage.isFetching);
+    const getFindMixes = useSelector(state => state.mixesListPage.mixes);
 
     const [currentPage, SetCurrentPage] = useState(1);
     const [mixesPerPage] = useState(6);
     const [openFullMix, SetOpenFullMix] = useState(false);
     //Get current mix
-    const indexOfLastMix = currentPage * mixesPerPage
+    const indexOfLastMix = currentPage * mixesPerPage;
     const indexOfFirstMix = indexOfLastMix - mixesPerPage;
     const currentMix = !!(getFindMixes) ? getFindMixes.slice(indexOfFirstMix, indexOfLastMix) : "";
 
@@ -28,23 +31,33 @@ const MixesContainer = () => {
     const handleOpenFullMix = (mix) => {
 
         return () => {
-            dispatch(setMix(mix))
+            const mixName=[];
+            const tobacoMix=[['Task', 'Hours per Day']];
+             Object.entries(mix).forEach((producerName)=> {
+               const tobacoElements=Object.entries(producerName[1]).map(tobacoElem => {
+                   tobacoMix.push([producerName[0] + "-" + tobacoElem[0],tobacoElem[1]]);
+                   return tobacoElem[0]
+
+               });
+                 mixName.push(`${producerName[0]}: ${tobacoElements} `)
+            });
+            dispatch(setMix(tobacoMix, mixName));
             SetOpenFullMix(true);
         }
 
 
-    }
+    };
 
     const handleCloseFullMix = () => {
         SetOpenFullMix(false);
 
-    }
+    };
 
 
     useEffect(() => {
         dispatch(setDeactiveteSide());
         dispatch(setDeactiveteBlender());
-    }, [])
+    }, []);
 
 
     return (
@@ -58,7 +71,7 @@ const MixesContainer = () => {
                     openFullMix={openFullMix}
                     handleOpenFullMix={handleOpenFullMix}
                     handleCloseFullMix={handleCloseFullMix}
-                ></Mixes>
+                />
                 : "Not found" : <MainPreloader></MainPreloader>
     )
 }

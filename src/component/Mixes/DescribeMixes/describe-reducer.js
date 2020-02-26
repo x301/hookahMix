@@ -1,7 +1,8 @@
 const SET_MIX = "/component/mixes/DESCRIBEMIX";
 
 const initialState = {
-
+    mixName:"",
+tobaccoMix: []
 }
 
 //Reducer
@@ -10,7 +11,9 @@ export const mixReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_MIX:
             state = {
-                ...action.mix
+                ...state,
+                mixName:[ ...action.mixName],
+                tobaccoMix: [...action.mix]
             }
             return state;
 
@@ -20,4 +23,4 @@ export const mixReducer = (state = initialState, action) => {
 }
 
 //AC
-export const setMix = (mix) => ({ type: SET_MIX, mix })
+export const setMix = (mix,mixName) => ({ type: SET_MIX, mix,mixName })
