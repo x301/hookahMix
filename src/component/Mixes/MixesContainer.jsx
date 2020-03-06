@@ -39,7 +39,7 @@ const MixesContainer = () => {
                    return tobacoElem[0]
 
                });
-                 mixName.push(`${producerName[0]}: ${tobacoElements} `)
+                 mixName.push(`${tobacoElements} `)
             });
             dispatch(setMix(tobacoMix, mixName));
             SetOpenFullMix(true);

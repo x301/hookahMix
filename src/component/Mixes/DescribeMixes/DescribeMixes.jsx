@@ -1,14 +1,18 @@
 import React from 'react'
 import { Chart } from "react-google-charts";
 import { useSelector } from 'react-redux';
+
+
 const DescibeMixes = ({ handleCloseFullMix }) => {
     const mix = useSelector(state => state.describeMixPage);
     const colors=["red","blue","green","orange","yellow","black"];
+
+    const mixesList = mix.tobaccoMix.slice(1);
     return (
         <section>
             <div>
                 {mix.mixName.map(e=> {
-                    return <div>{e}</div>
+                    return <span>{e}</span>
                 })}
             </div>
             <Chart
@@ -39,9 +43,10 @@ const DescibeMixes = ({ handleCloseFullMix }) => {
     }
     rootProps={{'data-testid': '2'}}
     />
-            <div>
+        <ul>{mixesList.map((e,i)=> {
+            return <li style={{color:`${colors[i]}`}}><span style={{color:`black`}}>{e[0]}</span></li>
 
-            </div>
+        })}</ul>
         </section>
     )
 };
