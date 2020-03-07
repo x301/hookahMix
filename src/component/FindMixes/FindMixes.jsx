@@ -35,9 +35,9 @@ export default () => {
     const getBlender = useSelector(state => state.tobacoListPage.blender);
     const dispatch = useDispatch()
     const findMixes = async () => {
-        await dispatch(setFetchingStatus());
+        //await dispatch(setFetchingStatus());
         history.push("/mixes")
-        await dispatch(getMixes(getBlender));
+        //await dispatch(getMixes(getBlender));
     }
 
     const fetchWithDelay = debounce(findMixes, 1000)

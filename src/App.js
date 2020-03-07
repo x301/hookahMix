@@ -10,6 +10,7 @@ import BlenderMenu from "./common/BlenderMenu/BlenderMenu"
 import ProducersContainer from './component/Side/ProducersContainer';
 import MixesContainer from './component/Mixes/MixesContainer';
 import Footer from './component/Footer/Footer';
+import DescibeMixes from "./component/Mixes/DescribeMixes/DescribeMixes";
 
 
 
@@ -30,6 +31,11 @@ const App = ({ state }) => {
         <Route path="/mixes">
 
           <MixesContainer></MixesContainer>
+
+        </Route>
+        <Route path="/mix">
+
+          <DescibeMixes></DescibeMixes>
 
         </Route>
 

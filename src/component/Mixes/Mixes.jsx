@@ -23,7 +23,7 @@ export const Mixes = ({ totalMixes, currentMix, mixesPerPage, paginate, currentP
     });
 
     return (
-        openFullMix ? <DesctibeMixes handleCloseFullMix={handleCloseFullMix} ></DesctibeMixes> : <MixesPageWrapper>
+        <MixesPageWrapper>
             <header><h1><strong>{`${totalMixes.length}`}</strong>{`: найденных миксов`}</h1></header>
             <MixesWrapper>{findedMixes}</MixesWrapper>
             <Paginator totalMixes={totalMixes.length}
