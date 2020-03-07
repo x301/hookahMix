@@ -1,6 +1,7 @@
 import React from 'react'
 import { Chart } from "react-google-charts";
 import { useSelector } from 'react-redux';
+import {NavLink} from "react-router-dom";
 
 
 const DescibeMixes = ({ handleCloseFullMix }) => {
@@ -11,11 +12,7 @@ const DescibeMixes = ({ handleCloseFullMix }) => {
     const mixesList = mix.tobaccoMix.slice(1);
     return (
         <section>
-            <div>
-                {mix.mixName.map((e,i)=> {
-                    return <span key={i}>{e}</span>
-                })}
-            </div>
+            <NavLink to={"/mixes"}>Миксы</NavLink>
             <Chart
     chartType="PieChart"
     data={mix.tobaccoMix}
